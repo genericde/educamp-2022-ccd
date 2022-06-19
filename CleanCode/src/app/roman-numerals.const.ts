@@ -16,7 +16,6 @@ const validRomanNumerals = romanNumeralsMap.map(
   (numeralValueObject: RomanNumeralValueObject) => numeralValueObject.key
 );
 
-
 export const sumRomanNumerals = (romanNumaralsToSum: string): number => {
   if (hasIllegalLetters(romanNumaralsToSum)) {
     throw new Error(errorMessageInvalidChars);
