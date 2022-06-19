@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 class FizzBuzz {
 
     public static void main(String[] args) {
@@ -9,9 +7,6 @@ class FizzBuzz {
     }
 
     public void printFizzBuzz() {
-//        Scanner sc = new Scanner(System.in);
-//        System.out.print("Enter the number: ");
-//        int n = sc.nextInt();
         int n = 100;
 
         for (int i = 1; i <= n; i++) {
@@ -29,7 +24,6 @@ class FizzBuzz {
             System.out.print(", " );
         }
 
-//        sc.close();
     }
 
 }
