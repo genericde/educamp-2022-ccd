@@ -8,7 +8,6 @@ numerals.Add('C', 100);
 numerals.Add('D', 500);
 numerals.Add('M', 1000);
 
-
 string numeralInput = ""; // Input of numeral to evaluate
 int result = 0; // Result to be calculated
 
