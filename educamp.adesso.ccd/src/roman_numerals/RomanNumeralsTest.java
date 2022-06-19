@@ -1,4 +1,5 @@
-package roman_numbers;
+package roman_numerals;
+
 import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -9,6 +10,10 @@ import java.util.Map.Entry;
 public class RomanNumeralsTest {
   List<Map.Entry<String, Long>> romanNumeralsToTest = new ArrayList<>();
 
+  public RomanNumeralsTest() {
+    this.setUp();
+  }
+
   private void setUp() {
     romanNumeralsToTest.add(createEntry("I", 1L));
     romanNumeralsToTest.add(createEntry("II", 2L));
@@ -18,8 +23,6 @@ public class RomanNumeralsTest {
   }
   
   public void test() {
-    setUp();
-
     int totalTests = romanNumeralsToTest.size();
     int passedTests = 0;
 

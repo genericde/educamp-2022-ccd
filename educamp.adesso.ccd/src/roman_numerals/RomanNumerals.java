@@ -1,4 +1,4 @@
-package roman_numbers;
+package roman_numerals;
 
 import java.util.HashMap;
 import java.util.Map;
