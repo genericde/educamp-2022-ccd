@@ -8,6 +8,7 @@ namespace From_Roman_Numerals
         // Dictionary for all valid Numerals
         static Dictionary<char, int> validNumerals = new Dictionary<char, int>()
         {
+            { 'Z', 0 },
             { 'I', 1 },
             { 'V', 5 },
             { 'X', 10 },
@@ -23,12 +24,6 @@ namespace From_Roman_Numerals
             {
                 string numeralInput; // Input of numeral to evaluate
 
-                Console.WriteLine("Accepted numerals: ");
-                foreach (KeyValuePair<char, int> numeral in validNumerals)
-                {
-                    Console.WriteLine(numeral.Key + " - " + numeral.Value);
-                }
-            
                 do
                 {
                     Console.WriteLine("Enter your Roman numeral: ");
@@ -46,32 +41,24 @@ namespace From_Roman_Numerals
             try
             {
                 int result = 0;
-                char lastSingleNumeral = 'z';
+                char lastSingleNumeral = 'Z';
 
                 foreach (char singleNumeral in numeralInput)
                 {
                     if (validNumerals.ContainsKey(singleNumeral))
                     {
-                        if (lastSingleNumeral != 'z')
+                        result += validNumerals[singleNumeral];
+
+                        // Check if the current numeral is larger then the next one -> If yes, the last numeral has to be substracted twice
+                        // example : "IV" should be 4
+                        // as "I" was added to the result in the last cycle (+1), it is now clear that it was meant to be substracted from the current one,
+                        // so it has to be substracted twice
+                        if (validNumerals[lastSingleNumeral] < validNumerals[singleNumeral])
                         {
-                            // Check if the current numeral is larger then the next one -> If yes, the last numeral has to be substracted twice
-                            // example : "IV" should be 4
-                            // as "I" was added to the result in the last cycle (+1), it is now clear that it was meant to be substracted from the current one,
-                            // so it has to be substracted twice
-                            if (validNumerals[lastSingleNumeral] < validNumerals[singleNumeral])
-                            {
-                                result = result - (2*validNumerals[lastSingleNumeral]) + validNumerals[singleNumeral];
-                            }
-                            else
-                            {
-                                result += validNumerals[singleNumeral];
-                            }
+                            result -= (2*validNumerals[lastSingleNumeral]);
                         }
-                        else
-                        {
-                            result += validNumerals[singleNumeral];
-                        }
-                        lastSingleNumeral = singleNumeral;
+
+                        lastSingleNumeral = singleNumeral;  
                     }
                 }
                 return result;
