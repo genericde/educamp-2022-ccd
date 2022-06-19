@@ -48,12 +48,10 @@ namespace From_Roman_Numerals
                 int result = 0;
                 char lastSingleNumeral = 'z';
 
-                // Iterate through input
                 foreach (char singleNumeral in numeralInput)
                 {
                     if (validNumerals.ContainsKey(singleNumeral))
                     {
-                        // Check if this is the first numeral. If yes, just add it to result
                         if (lastSingleNumeral != 'z')
                         {
                             // Check if the current numeral is larger then the next one -> If yes, the last numeral has to be substracted twice
@@ -62,9 +60,8 @@ namespace From_Roman_Numerals
                             // so it has to be substracted twice
                             if (validNumerals[lastSingleNumeral] < validNumerals[singleNumeral])
                             {
-                                result = result - validNumerals[lastSingleNumeral] - validNumerals[lastSingleNumeral] + validNumerals[singleNumeral];
+                                result = result - (2*validNumerals[lastSingleNumeral]) + validNumerals[singleNumeral];
                             }
-                            // Otherwise just add the result
                             else
                             {
                                 result += validNumerals[singleNumeral];
@@ -74,7 +71,6 @@ namespace From_Roman_Numerals
                         {
                             result += validNumerals[singleNumeral];
                         }
-                        // Set current numeral as "last numeral" to use in the next cycle
                         lastSingleNumeral = singleNumeral;
                     }
                 }
