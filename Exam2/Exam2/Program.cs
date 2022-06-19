@@ -6,6 +6,8 @@ namespace Exam2
 	public class Program
 	{
 		private static IValidator _validatorService;
+		private static int StartIndex = 1;
+		private static int EndIndex = 100;
 
 		public static void Main(string[] args)
 		{
@@ -17,15 +19,15 @@ namespace Exam2
 
 			Console.WriteLine("Start Application at: " + DateTime.UtcNow);
 
-			HandleFizzBuzz();
+			HandleFizzBuzz(StartIndex, EndIndex);
 
 			Console.WriteLine("End Application at: " + DateTime.UtcNow);
 
 		}
 
-		private static void HandleFizzBuzz()
+		private static void HandleFizzBuzz(int startIndex, int endIndex)
 		{
-			for (int i = 1; i <= 100; i++)
+			for (int i = startIndex; i <= endIndex; i++)
 			{
 				var validationResult = _validatorService.ValidateCount(i);
 
