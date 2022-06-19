@@ -7,7 +7,7 @@ namespace Exam1
 	{
 		public static void Main(string[] args)
 		{
-			var romanNumeral = "IVX";
+			var romanNumeral = "IIV";
 
 			var calculatedValue = TranslateRomanNumerals(romanNumeral);
 
@@ -34,7 +34,7 @@ namespace Exam1
 					{
 						previousIndex = romanNumeralDefinition.FindIndex(x => x.Key == romanChars[i - 1]);
 
-						if (currentIndex >= previousIndex)
+						if (currentIndex > previousIndex)
 						{
 							decimalValue = item.Value - decimalValue;
 						}
