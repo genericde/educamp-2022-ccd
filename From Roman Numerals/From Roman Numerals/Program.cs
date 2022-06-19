@@ -29,32 +29,30 @@ do
     {
         if (!numerals.ContainsKey(singleNumeral))
         {
-            Console.WriteLine("Character " + singleNumeral + " not accepted");
-            return;
-        }
-        // Check if this is the first numeral. If yes, just add it to result
-        if (lastSingleNumeral != 'z')
-        {
-            // Check if the current numeral is larger then the next one -> If yes, the last numeral has to be substracted twice
-            // example : "IV" should be 4
-            // as "I" was added to the result in the last cycle (+1), it is now clear that it was meant to be substracted from the current one,
-            // so it has to be substracted twice
-            if (numerals[lastSingleNumeral] < numerals[singleNumeral])
+            // Check if this is the first numeral. If yes, just add it to result
+            if (lastSingleNumeral != 'z')
             {
-                result = result - numerals[lastSingleNumeral] - numerals[lastSingleNumeral] + numerals[singleNumeral];
+                // Check if the current numeral is larger then the next one -> If yes, the last numeral has to be substracted twice
+                // example : "IV" should be 4
+                // as "I" was added to the result in the last cycle (+1), it is now clear that it was meant to be substracted from the current one,
+                // so it has to be substracted twice
+                if (numerals[lastSingleNumeral] < numerals[singleNumeral])
+                {
+                    result = result - numerals[lastSingleNumeral] - numerals[lastSingleNumeral] + numerals[singleNumeral];
+                }
+                // Otherwise just add the result
+                else
+                {
+                    result += numerals[singleNumeral];
+                }
             }
-            // Otherwise just add the result
             else
             {
                 result += numerals[singleNumeral];
             }
+            // Set current numeral as "last numeral" to use in the next cycle
+            lastSingleNumeral = singleNumeral;
         }
-        else
-        {
-            result += numerals[singleNumeral];
-        }
-        // Set current numeral as "last numeral" to use in the next cycle
-        lastSingleNumeral = singleNumeral;
     }
     
     Console.WriteLine("Result: " + result);
