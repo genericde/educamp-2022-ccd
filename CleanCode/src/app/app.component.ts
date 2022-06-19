@@ -12,6 +12,8 @@ interface RomanNumeralValueObject {
 })
 export class AppComponent implements OnInit {
 
+  private readonly errorMessageInvalidChars = 'Error: Invalid Characters in Numeral!';
+
   private readonly romanNumeralsMap: RomanNumeralValueObject[] = [
     { key: 'I', value: 1 },
     { key: 'V', value: 5 },
@@ -21,6 +23,10 @@ export class AppComponent implements OnInit {
     { key: 'D', value: 500 },
     { key: 'M', value: 1000}
   ];
+
+  private readonly validRomanNumerals = this.romanNumeralsMap.map(
+    (numeralValueObject: RomanNumeralValueObject) => numeralValueObject.key
+  );
 
   ngOnInit(): void {
     console.log('TEST CASES');
@@ -32,9 +38,14 @@ export class AppComponent implements OnInit {
     console.log('XLII', this.sumRomanNumerals('XLII'), 'should be 42', this.sumRomanNumerals('XLII') === 42);
     console.log('XCIX', this.sumRomanNumerals('XCIX'), 'should be 99', this.sumRomanNumerals('XCIX') === 99);
     console.log('MMXXII', this.sumRomanNumerals('MMXXII'), 'should be 2022', this.sumRomanNumerals('MMXXII') === 2022);
+    console.log('MMXA', this.sumRomanNumerals('MMXA'), 'should throw error', this.sumRomanNumerals('MMXA') === this.errorMessageInvalidChars);
   }
 
-  private sumRomanNumerals(romanNumarals: string): number {
+  private sumRomanNumerals(romanNumarals: string): number | string {
+    if (this.hasIllegalLetters(romanNumarals)) {
+      return this.errorMessageInvalidChars;
+    }
+
     let totalValue = 0;
 
     for (let i = 0; i < romanNumarals.length; i++) {
@@ -57,6 +68,14 @@ export class AppComponent implements OnInit {
     );
 
     return numeralValueObject?.value ?? 0;
+  }
+
+  private hasIllegalLetters(romanNumeral: string): boolean {
+    const romanNumeralChars = romanNumeral.split('');
+
+    return romanNumeralChars.some(
+      (value: string) => !this.validRomanNumerals.includes(value)
+    );
   }
 
 }
