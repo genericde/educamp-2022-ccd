@@ -46,25 +46,25 @@ export class AppComponent implements OnInit {
     }
   }
 
-  private sumRomanNumerals(romanNumarals: string): number {
-    if (this.hasIllegalLetters(romanNumarals)) {
+  private sumRomanNumerals(romanNumaralsToSum: string): number {
+    if (this.hasIllegalLetters(romanNumaralsToSum)) {
       throw new Error(  this.errorMessageInvalidChars);
     }
 
-    let totalValue = 0;
+    let sum = 0;
 
-    for (let i = 0; i < romanNumarals.length; i++) {
-      const currentValue = this.determineNumberValueOfRomanNumeral(romanNumarals[i]);
-      const nextValue = this.determineNumberValueOfRomanNumeral(romanNumarals[i + 1]);
+    for (let i = 0; i < romanNumaralsToSum.length; i++) {
+      const currentValue = this.determineNumberValueOfRomanNumeral(romanNumaralsToSum[i]);
+      const nextValue = this.determineNumberValueOfRomanNumeral(romanNumaralsToSum[i + 1]);
 
       if (currentValue === nextValue || currentValue > nextValue) {
-        totalValue += currentValue;
+        sum += currentValue;
       } else {
-        totalValue -= currentValue;
+        sum -= currentValue;
       }
     }
 
-    return totalValue;
+    return sum;
   }
 
   private determineNumberValueOfRomanNumeral(romanNumeral: string): number {
