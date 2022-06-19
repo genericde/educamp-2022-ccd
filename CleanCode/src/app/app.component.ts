@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-interface RomanNumeralValueObject {
-  key: string;
-  value: number
-};
+import { RomanNumeralValueObject } from './roman-numeral-value-object.interface';
 
 @Component({
   selector: 'app-root',
