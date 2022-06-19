@@ -8,20 +8,20 @@ import static org.junit.Assert.assertEquals;
 public class FizzBuzzTest {
     @Test
     public void testFizzBuzzWithDivideableBy5and3() {
-        assertEquals(FizzBuzz.replaceIfFizzBuzzNumber(15), "FizzBuzz");
-        assertEquals(FizzBuzz.replaceIfFizzBuzzNumber(450), "FizzBuzz");
+        assertEquals( "FizzBuzz", FizzBuzz.replaceIfFizzBuzzNumber(15));
+        assertEquals("FizzBuzz", FizzBuzz.replaceIfFizzBuzzNumber(450));
     }
 
     @Test
     public void testFizzBuzzWithDivideableBy3() {
-        assertEquals(FizzBuzz.replaceIfFizzBuzzNumber(21), "Fizz");
-        assertEquals(FizzBuzz.replaceIfFizzBuzzNumber(9), "Fizz");
+        assertEquals( "Fizz", FizzBuzz.replaceIfFizzBuzzNumber(21));
+        assertEquals("Fizz", FizzBuzz.replaceIfFizzBuzzNumber(9));
     }
 
     @Test
     public void testFizzBuzzWithDivideableBy5() {
-        assertEquals(FizzBuzz.replaceIfFizzBuzzNumber(20), "Buzz");
-        assertEquals(FizzBuzz.replaceIfFizzBuzzNumber(455), "Buzz");
+        assertEquals( "Buzz", FizzBuzz.replaceIfFizzBuzzNumber(20));
+        assertEquals( "Buzz", FizzBuzz.replaceIfFizzBuzzNumber(455));
     }
 
     @Test
