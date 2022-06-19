@@ -38,12 +38,18 @@ export class AppComponent implements OnInit {
     console.log('XLII', this.sumRomanNumerals('XLII'), 'should be 42', this.sumRomanNumerals('XLII') === 42);
     console.log('XCIX', this.sumRomanNumerals('XCIX'), 'should be 99', this.sumRomanNumerals('XCIX') === 99);
     console.log('MMXXII', this.sumRomanNumerals('MMXXII'), 'should be 2022', this.sumRomanNumerals('MMXXII') === 2022);
-    console.log('MMXA', this.sumRomanNumerals('MMXA'), 'should throw error', this.sumRomanNumerals('MMXA') === this.errorMessageInvalidChars);
+
+    try {
+      console.log('MMXA', this.sumRomanNumerals('MMXA'), 'should throw error', this.sumRomanNumerals('MMXA'));
+    } catch (e) {
+      console.error(e)
+    }
+
   }
 
-  private sumRomanNumerals(romanNumarals: string): number | string {
+  private sumRomanNumerals(romanNumarals: string): number {
     if (this.hasIllegalLetters(romanNumarals)) {
-      return this.errorMessageInvalidChars;
+      throw new Error(  this.errorMessageInvalidChars);
     }
 
     let totalValue = 0;
