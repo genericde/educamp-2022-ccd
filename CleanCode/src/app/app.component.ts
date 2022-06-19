@@ -48,7 +48,7 @@ export class AppComponent implements OnInit {
 
   private sumRomanNumerals(romanNumaralsToSum: string): number {
     if (this.hasIllegalLetters(romanNumaralsToSum)) {
-      throw new Error(  this.errorMessageInvalidChars);
+      throw new Error(this.errorMessageInvalidChars);
     }
 
     let sum = 0;
