@@ -5,28 +5,25 @@ namespace FizzBuzz.Tests
 {
     public class UnitTest1
     {
-        [Fact]
-        public void TestReplaceDivisbleByThree()
-        {
-            Assert.Equal("Fizz", Program.ReplaceDivisbleByThree(9));
-            Assert.Equal("Fizz", Program.ReplaceDivisbleByThree(18));
-            Assert.Equal("Fizz", Program.ReplaceDivisbleByThree(3));
-            Assert.Equal(String.Empty, Program.ReplaceDivisbleByThree(7));
-            Assert.Equal(String.Empty, Program.ReplaceDivisbleByThree(23));
-        }
 
         [Fact]
-        public void TestReplaceDivisbleByFive()
+        public void TestReplaceDivisble()
         {
-            Assert.Equal("Buzz", Program.ReplaceDivisbleByFive(5));
-            Assert.Equal(String.Empty, Program.ReplaceDivisbleByFive(16));
-            Assert.Equal("Buzz", Program.ReplaceDivisbleByFive(35));
-            Assert.Equal("Buzz", Program.ReplaceDivisbleByFive(85));
-            Assert.Equal(String.Empty, Program.ReplaceDivisbleByFive(7));
-            Assert.Equal(String.Empty, Program.ReplaceDivisbleByFive(9));
+            Assert.Equal("Buzz", Program.ReplaceDivisble(5, 5));
+            Assert.Equal(String.Empty, Program.ReplaceDivisble(16, 5));
+            Assert.Equal("Buzz", Program.ReplaceDivisble(35, 5));
+            Assert.Equal("Buzz", Program.ReplaceDivisble(85, 5));
+            Assert.Equal(String.Empty, Program.ReplaceDivisble(7, 5));
+            Assert.Equal(String.Empty, Program.ReplaceDivisble(9, 5));
+            Assert.Equal("Fizz", Program.ReplaceDivisble(9, 3));
+            Assert.Equal("Fizz", Program.ReplaceDivisble(18, 3));
+            Assert.Equal("Fizz", Program.ReplaceDivisble(3, 3));
+            Assert.Equal(String.Empty, Program.ReplaceDivisble(7, 3));
+            Assert.Equal(String.Empty, Program.ReplaceDivisble(23, 3));
         }
 
-        [Fact]        public void TestReplaceNumber()
+        [Fact]        
+        public void TestReplaceNumber()
         {
             Assert.Equal("Buzz", Program.replaceNumber(5));
             Assert.Equal("16", Program.replaceNumber(16));
@@ -36,6 +33,14 @@ namespace FizzBuzz.Tests
             Assert.Equal("FizzBuzz", Program.replaceNumber(15));
             Assert.Equal("FizzBuzz", Program.replaceNumber(45));
             Assert.Equal("FizzBuzz", Program.replaceNumber(60));
+
+        }
+        [Fact]
+        public void TestConcatResults()
+        {
+            Assert.Equal("Buzz", Program.concatResults("B", "uzz"));
+            Assert.Equal("FizzBuzz", Program.concatResults("Fizz", "Buzz"));
+            Assert.Equal("Wednesday", Program.concatResults("Wedne", "sday"));
 
         }
     }

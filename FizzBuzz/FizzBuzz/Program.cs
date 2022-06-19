@@ -10,40 +10,61 @@ namespace FizzBuzz
             {3, "Fizz" },
             {5, "Buzz" }
         };
+
         static void Main(string[] args)
         {
-            for (int i = 1; i <= 100; i++)
+            try
             {
-                Console.WriteLine(replaceNumber(i));
+                for (int i = 1; i <= 100; i++)
+                {
+                    Console.WriteLine(replaceNumber(i));
+                }
+                Console.ReadKey();
             }
-            Console.ReadKey();
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
 
        
 
         public static string concatResults(string input1, string input2)
         {
-            return input1 + input2;
+            try
+            {
+                return input1 + input2;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public static string replaceNumber(int inputNumber)
         {
-            string result = concatResults(ReplaceDivisbleByThree(inputNumber),ReplaceDivisbleByFive(inputNumber));
-            return (result == String.Empty) ? inputNumber.ToString() : result;
+            try
+            {
+                string result = concatResults(ReplaceDivisble(inputNumber, 3), ReplaceDivisble(inputNumber, 5));
+                return (result == String.Empty) ? inputNumber.ToString() : result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public static string ReplaceDivisble(int inputNumber, int DivisibleBy)
         {
-            return (inputNumber % DivisibleBy == 0) ? replaceTable[DivisibleBy] : String.Empty;
+            try
+            {
+                return (inputNumber % DivisibleBy == 0) ? replaceTable[DivisibleBy] : String.Empty;
+            }
+            catch (Exception ex) 
+            {
+                throw new Exception(ex.Message);
+            }
         }
-        public static string ReplaceDivisbleByThree(int inputNumber)
-        {
-            return ReplaceDivisble(inputNumber, 3);
-        }
-
-        public static string ReplaceDivisbleByFive(int inputNumber)
-        {
-            return ReplaceDivisble(inputNumber, 5);
-        }
+      
     }
 }
