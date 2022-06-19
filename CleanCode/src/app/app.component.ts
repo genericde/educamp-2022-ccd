@@ -38,8 +38,8 @@ export class AppComponent implements OnInit {
     let totalValue = 0;
 
     for (let i = 0; i < romanNumarals.length; i++) {
-      const currentValue = this.getNumberValueOfRomanNumeral(romanNumarals[i]);
-      const nextValue = this.getNumberValueOfRomanNumeral(romanNumarals[i + 1]);
+      const currentValue = this.determineNumberValueOfRomanNumeral(romanNumarals[i]);
+      const nextValue = this.determineNumberValueOfRomanNumeral(romanNumarals[i + 1]);
 
       if (currentValue === nextValue || currentValue > nextValue) {
         totalValue += currentValue;
@@ -51,7 +51,7 @@ export class AppComponent implements OnInit {
     return totalValue;
   }
 
-  private getNumberValueOfRomanNumeral(romanNumeral: string): number {
+  private determineNumberValueOfRomanNumeral(romanNumeral: string): number {
     const numeralValueObject: RomanNumeralValueObject | undefined = this.romanNumeralsMap.find(
       (numeralValueObject) => numeralValueObject.key === romanNumeral
     );
