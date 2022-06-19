@@ -7,7 +7,7 @@ namespace Exam1
 	{
 		public static void Main(string[] args)
 		{
-			var romanNumeral = "VI";
+			var romanNumeral = "IVX";
 
 			var calculatedValue = TranslateRomanNumerals(romanNumeral);
 
@@ -23,11 +23,32 @@ namespace Exam1
 				var romanChars = romanNumeral.ToCharArray();
 				var romanNumeralDefinition = RomanNumeralDefinition.GetValues();
 				var decimalValue = 0;
+				var previousIndex = 0;
 
-				foreach (var romanChar in romanChars)
+				for (int i = 0; i < romanChars.Length; i++)
 				{
-					var item = romanNumeralDefinition.First(x => x.Key == romanChar);
-					decimalValue += item.Value;
+					var item = romanNumeralDefinition.First(x => x.Key == romanChars[i]);
+					var currentIndex = romanNumeralDefinition.IndexOf(item);
+
+					if (i != 0)
+					{
+						previousIndex = romanNumeralDefinition.FindIndex(x => x.Key == romanChars[i - 1]);
+
+						if (currentIndex >= previousIndex)
+						{
+							decimalValue = item.Value - decimalValue;
+						}
+						else
+						{
+							decimalValue += item.Value;
+						}
+
+					}
+					else
+					{
+						decimalValue += item.Value;
+					}
+
 				}
 
 				return decimalValue;
