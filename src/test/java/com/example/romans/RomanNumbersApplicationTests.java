@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.romans;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,6 +17,9 @@ class RomanNumbersApplicationTests {
 	@Test
 	void Add2RomansNumbers() {
 		List<String> list = new ArrayList<>();
+		list.add("I");
+		list.add("I");
+		list.add("I");
 		list.add("M");
 		list.add("M");
 		list.add("V");
