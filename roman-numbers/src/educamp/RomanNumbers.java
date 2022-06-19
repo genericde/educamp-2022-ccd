@@ -23,12 +23,12 @@ public class RomanNumbers {
 
         Map<Character, Integer> heavyMap = new HashMap<>();
         heavyMap.put(I, 1);
-        heavyMap.put(V, 2);
-        heavyMap.put(X, 3);
-        heavyMap.put(L, 4);
-        heavyMap.put(C, 5);
-        heavyMap.put(D, 6);
-        heavyMap.put(M, 7);
+        heavyMap.put(V, 5);
+        heavyMap.put(X, 10);
+        heavyMap.put(L, 50);
+        heavyMap.put(C, 100);
+        heavyMap.put(D, 500);
+        heavyMap.put(M, 1000);
 
         char[] romanChars = romanNumber.toCharArray();
 
@@ -37,40 +37,10 @@ public class RomanNumbers {
             char nextChar = romanChars[i];
 
             if (charPrecedingBiggerChar(nextChar, i, romanChars, heavyMap)) {
-                if (nextChar == I) {
-                    result -= 1;
-                } else if (nextChar == V) {
-                    result -= 5;
-                } else if (nextChar == X) {
-                    result -= 10;
-                } else if (nextChar == L) {
-                    result -= 50;
-                } else if (nextChar == C) {
-                    result -= 100;
-                } else if (nextChar == D) {
-                    result -= 500;
-                } else if (nextChar == M) {
-                    result -= 1000;
-                }
+                result -= heavyMap.get(nextChar);
             } else {
-                if (nextChar == I) {
-                    result += 1;
-                } else if (nextChar == V) {
-                    result += 5;
-                } else if (nextChar == X) {
-                    result += 10;
-                } else if (nextChar == L) {
-                    result += 50;
-                } else if (nextChar == C) {
-                    result += 100;
-                } else if (nextChar == D) {
-                    result += 500;
-                } else if (nextChar == M) {
-                    result += 1000;
-                }
-
+                result += heavyMap.get(nextChar);
             }
-
         }
 
         System.out.println("Result = " + result);
