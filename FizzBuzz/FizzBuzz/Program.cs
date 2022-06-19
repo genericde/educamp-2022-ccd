@@ -10,7 +10,11 @@ namespace FizzBuzz
             {3, "Fizz" },
             {5, "Buzz" }
         };
-
+        /// <summary>
+        /// Prints all numbers from 1-100
+        /// Replaces numbers divisible by the numbers in the Dictionary (Key) with a string (Value).
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             try
