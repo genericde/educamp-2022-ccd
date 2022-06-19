@@ -6,7 +6,7 @@ import static org.testng.AssertJUnit.assertTrue;
 public class FizzBuzzTest {
     @Test
     void testFizzBuzzWithDivideableBy5and3() {
-        assertEquals(FizzBuzz.replaceIfFizzBuzzNumber(15), "FizzBuzz");
+        assertEquals(FizzBuzz.replaceIfFizzBuzzNumber(15), "main.java.fizz.buzz.FizzBuzz");
     }
 
     @Test
