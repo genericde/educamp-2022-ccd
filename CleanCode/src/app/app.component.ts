@@ -53,7 +53,7 @@ export class AppComponent implements OnInit {
 
   private determineNumberValueOfRomanNumeral(romanNumeral: string): number {
     const numeralValueObject: RomanNumeralValueObject | undefined = this.romanNumeralsMap.find(
-      (numeralValueObject) => numeralValueObject.key === romanNumeral
+      (numeralValueObject: RomanNumeralValueObject) => numeralValueObject.key === romanNumeral
     );
 
     return numeralValueObject?.value ?? 0;
