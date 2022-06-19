@@ -44,7 +44,6 @@ export class AppComponent implements OnInit {
     } catch (e) {
       console.error(e)
     }
-
   }
 
   private sumRomanNumerals(romanNumarals: string): number {
