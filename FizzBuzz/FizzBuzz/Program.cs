@@ -27,7 +27,6 @@ namespace FizzBuzz
             }
         }
 
-       
 
         public static string concatResults(string input1, string input2)
         {
