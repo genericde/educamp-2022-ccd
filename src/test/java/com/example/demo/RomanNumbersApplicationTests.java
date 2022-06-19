@@ -17,6 +17,8 @@ class RomanNumbersApplicationTests {
 	@Test
 	void Add2RomansNumbers() {
 		List<String> list = new ArrayList<>();
+		list.add("M");
+		list.add("M");
 		list.add("V");
 		list.add("V");
 		list.add("I");
