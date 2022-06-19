@@ -15,7 +15,7 @@ class FizzBuzzRunnerTest {
 
 
 	@Test
-	void Add2RomansNumbers() {
+	void DispayNumbersToConsole() {
 		Runner runner = new Runner();
 		NumberGenerator generator = new NumberGenerator();
 
