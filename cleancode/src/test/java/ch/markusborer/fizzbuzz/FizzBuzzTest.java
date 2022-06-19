@@ -3,8 +3,14 @@ package ch.markusborer.fizzbuzz;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+import org.mockito.Mockito;
+
+import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Matchers.anyString;
+import static org.mockito.Mockito.verify;
+import static org.mockito.internal.verification.VerificationModeFactory.times;
 
 class FizzBuzzTest {
 
@@ -34,6 +40,8 @@ class FizzBuzzTest {
 
     @Test
     void showNumbersFrom1To100() {
-
+        PrintStream printStream = Mockito.mock(PrintStream.class);
+        System.setOut(printStream);
+        verify(printStream, times(100)).println(anyString());
     }
 }
