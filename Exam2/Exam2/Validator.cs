@@ -12,24 +12,33 @@ namespace Exam2
 		{
 			var result = new ValidationResult();
 
-			var isFizz = currentCount % 3 == 0;
-			var isBuzz = currentCount % 5 == 0;
-
-			if (isFizz && isBuzz)
+			if (isFizz(currentCount) && isBuzz(currentCount))
 			{
 				result.IsFizz = true;
 				result.IsBuzz = true;
 			}
-			else if (isFizz)
+			else if (isFizz(currentCount))
 			{
 				result.IsFizz = true;
 			}
-			else if (isBuzz)
+			else if (isBuzz(currentCount))
 			{
 				result.IsBuzz = true;
 			}
 
 			return result;
 		}
+
+		private static bool isFizz(int currentCount)
+		{
+			return currentCount % 3 == 0;
+		}
+
+
+		private static bool isBuzz(int currentCount)
+		{
+			return currentCount % 5 == 0;
+		}
+
 	}
 }
