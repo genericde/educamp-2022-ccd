@@ -1,31 +1,32 @@
-import { RomanNumeralValueObject } from "./roman-numeral-value-object.interface";
+import { RomanLiteralMapping } from "./roman-literal-mapping.interface";
+import { RomanLiteral } from './roman-literal.type';
 
-const errorMessageInvalidChars = 'Error: Invalid Characters in Numeral!';
+const errorMessageInvalidLetters = 'Error: Invalid Letters in Numeral!';
 
-const romanNumeralsMap: RomanNumeralValueObject[] = [
-  { key: 'I', value: 1 },
-  { key: 'V', value: 5 },
-  { key: 'X', value: 10 },
-  { key: 'L', value: 50 },
-  { key: 'C', value: 100 },
-  { key: 'D', value: 500 },
-  { key: 'M', value: 1000}
+const romanLiteralsMap: RomanLiteralMapping[] = [
+  { literal: 'I', value: 1 },
+  { literal: 'V', value: 5 },
+  { literal: 'X', value: 10 },
+  { literal: 'L', value: 50 },
+  { literal: 'C', value: 100 },
+  { literal: 'D', value: 500 },
+  { literal: 'M', value: 1000}
 ];
 
-const validRomanNumerals = romanNumeralsMap.map(
-  (numeralValueObject: RomanNumeralValueObject) => numeralValueObject.key
+const validRomanLiterals = romanLiteralsMap.map(
+  (romanLiteralMap: RomanLiteralMapping) => romanLiteralMap.literal
 );
 
-export const sumRomanNumerals = (romanNumaralsToSum: string): number => {
-  if (hasIllegalLetters(romanNumaralsToSum)) {
-    throw new Error(errorMessageInvalidChars);
+export const sumRomanNumeral = (romanNumeralToSum: string): number => {
+  if (hasIllegalLetters(romanNumeralToSum)) {
+    throw new Error(errorMessageInvalidLetters);
   }
 
   let sum = 0;
 
-  for (let i = 0; i < romanNumaralsToSum.length; i++) {
-    const currentValue = determineNumberValueOfRomanNumeral(romanNumaralsToSum[i]);
-    const nextValue = determineNumberValueOfRomanNumeral(romanNumaralsToSum[i + 1]);
+  for (let i = 0; i < romanNumeralToSum.length; i++) {
+    const currentValue = determineNumberValueOfRomanLiteral(romanNumeralToSum[i]);
+    const nextValue = determineNumberValueOfRomanLiteral(romanNumeralToSum[i + 1]);
 
     if (currentValue === nextValue || currentValue > nextValue) {
       sum += currentValue;
@@ -37,18 +38,18 @@ export const sumRomanNumerals = (romanNumaralsToSum: string): number => {
   return sum;
 }
 
-const determineNumberValueOfRomanNumeral = (romanNumeral: string): number => {
-  const numeralValueObject: RomanNumeralValueObject | undefined = romanNumeralsMap.find(
-    (numeralValueObject: RomanNumeralValueObject) => numeralValueObject.key === romanNumeral
+const determineNumberValueOfRomanLiteral = (romanLiteral: string): number => {
+  const romanLiteralMap: RomanLiteralMapping | undefined = romanLiteralsMap.find(
+    (map: RomanLiteralMapping) => map.literal === romanLiteral
   );
 
-  return numeralValueObject?.value ?? 0;
+  return romanLiteralMap?.value ?? 0;
 }
 
 const hasIllegalLetters = (romanNumeral: string): boolean => {
-  const romanNumeralChars = romanNumeral.split('');
+  const romanNumeralLetters = romanNumeral.split('') as RomanLiteral[];
 
-  return romanNumeralChars.some(
-    (value: string) => !validRomanNumerals.includes(value)
+  return romanNumeralLetters.some(
+    (value: RomanLiteral) => !validRomanLiterals.includes(value)
   );
 }
