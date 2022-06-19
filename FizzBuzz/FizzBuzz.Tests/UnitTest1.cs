@@ -43,5 +43,15 @@ namespace FizzBuzz.Tests
             Assert.Equal("Wednesday", Program.concatResults("Wedne", "sday"));
 
         }
+
+        [Fact]
+        public void TestCreateResult()
+        {
+            Assert.Equal("Buzz", Program.createResult(5, "Buzz"));
+            Assert.Equal("5", Program.createResult(5, String.Empty));
+            Assert.Equal("ABC", Program.createResult(24, "ABC"));
+            Assert.Equal("55", Program.createResult(55, String.Empty));
+
+        }
     }
 }
