@@ -83,8 +83,13 @@ public class RomanNumbers {
 
     private static boolean charPrecedingBiggerChar(char nextChar, int position, char[] romanInput, Map<Character, Integer> heavyMap) {
 
-        for (int i = position; i < romanInput.length; i++) {
+        for (int i = position + 1; i < romanInput.length; i++) {
+            char followingChar = romanInput[i];
+
             // check if there are heavier chars following in the string
+            if (heavyMap.get(followingChar) > heavyMap.get(nextChar)) {
+                return true;
+            }
 
         }
 
