@@ -6,22 +6,34 @@ public class Translate {
         int result = 0;
         for (int i = 0; i < roman.length(); i++) {
             String symbol = roman.substring(i, i + 1);
-            String nextSymbol = "";
-            if (roman.length() > i + 1) {
-                nextSymbol = roman.substring(i + 1, i + 2);
-            }
             result +=  switch (symbol) {
                 case "M" -> 1000;
                 case "D" -> 500;
-                case "C" -> 100;
+                case "C" -> convertC(nextSmbol(roman, i));
                 case "L" -> 50;
-                case "X" -> convertX(nextSymbol);
+                case "X" -> convertX(nextSmbol(roman, i));
                 case "V" -> 5;
-                case "I" -> convertI(nextSymbol);
+                case "I" -> convertI(nextSmbol(roman, i));
                 default -> 0;
             };
         }
         return result;
+    }
+
+    private String nextSmbol(String roman, int i) {
+        String nextSymbol = "";
+        if (roman.length() > i + 1) {
+            nextSymbol = roman.substring(i + 1, i + 2);
+        }
+        return nextSymbol;
+    }
+
+    private int convertC(String nextSymbol) {
+        return switch (nextSymbol) {
+            case "D" -> -100;
+            case "M" -> -100;
+            default -> 100;
+        };
     }
 
     private int convertX(String nextSymbol) {
