@@ -11,7 +11,7 @@ namespace Exam1
 
 			var calculatedValue = TranslateRomanNumerals(romanNumeral);
 
-			Console.WriteLine("Roman Literal: " + romanNumeral + " translated to:" + calculatedValue);
+			Console.WriteLine("Roman Numeral: " + romanNumeral + " translated to:" + calculatedValue);
 
 		}
 
