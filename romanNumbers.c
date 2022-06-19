@@ -1,7 +1,6 @@
 
-
-int translateRomanNumber(char * romanNumberString);
 int translateRomanLiteral(char oneLiteral);
+
 
 int translateRomanNumber(char * romanNumberString)
 {
