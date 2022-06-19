@@ -23,8 +23,6 @@ public class RomanNumbers {
 
     private static void calculateDecimalNumber(String romanNumber) {
 
-        List<Character> orderedRomanChars = Arrays.asList(I, V, X, L, C, D, M);
-
         Map<Character, Integer> heavyMap = new HashMap<>();
         heavyMap.put(I, 1);
         heavyMap.put(V, 2);
