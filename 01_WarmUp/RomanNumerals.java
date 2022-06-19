@@ -29,8 +29,7 @@ class RomanNumerals {
         for (int i=0; i < romanNumeral.length(); i++) {
             char ch = romanNumeral.charAt(i);
 
-            if (i > 0 && numbersMap.get(ch) > numbersMap.get(romanNumeral.charAt(i-1)))
-            {
+            if (i > 0 && numbersMap.get(ch) > numbersMap.get(romanNumeral.charAt(i-1))) {
                 result += numbersMap.get(ch) - 2*numbersMap.get(romanNumeral.charAt(i-1));
             }
 
