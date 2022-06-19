@@ -35,29 +35,37 @@ public class Translate {
     }
 
     private boolean convertX(String nextSymbol) {
-        if (nextSymbol.equals("L")) {
-            result += 40;
-            return true;
-        } else if (nextSymbol.equals("C")) {
-            result += 90;
-            return true;
-        } else {
-            result += 10;
-        }
-        return false;
+        return switch (nextSymbol) {
+            case "L" -> {
+                result += 40;
+                yield true;
+            }
+            case "C" -> {
+                result += 90;
+                yield true;
+            }
+            default -> {
+                result += 10;
+                yield false;
+            }
+        };
     }
 
     private boolean convertI(String nextSymbol) {
-        if (nextSymbol.equals("V")) {
-            result += 4;
-            return true;
-        } else if (nextSymbol.equals("X")) {
-            result += 9;
-            return true;
-        } else {
-            result += 1;
-        }
-        return false;
+        return switch (nextSymbol) {
+            case "V" -> {
+                result += 4;
+                yield true;
+            }
+            case "X" -> {
+                result += 9;
+                yield true;
+            }
+            default -> {
+                result += 1;
+                yield false;
+            }
+        };
     }
 
     public static void main(String[] args) {
