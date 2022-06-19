@@ -1,0 +1,1 @@
+﻿FizzBuzzIntegration.Run(Console.WriteLine);
