@@ -21,12 +21,12 @@ namespace Exam1
 			try
 			{
 				var romanChars = romanNumeral.ToCharArray();
-				var list = RomanNumeralDefinition.GetValues();
+				var romanNumeralDefinition = RomanNumeralDefinition.GetValues();
 				var decimalValue = 0;
 
 				foreach (var romanChar in romanChars)
 				{
-					var item = list.First(x => x.Key == romanChar);
+					var item = romanNumeralDefinition.First(x => x.Key == romanChar);
 					decimalValue += item.Value;
 				}
 
