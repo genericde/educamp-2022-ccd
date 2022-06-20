@@ -1,10 +1,8 @@
 package ch.markusborer.fizzbuzz;
 
-import java.util.function.Consumer;
-import java.util.function.IntFunction;
-import java.util.function.IntUnaryOperator;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 public class FizzBuzz {
 
@@ -12,17 +10,17 @@ public class FizzBuzz {
         // Variante 1
         IntStream.range(1, 101).mapToObj(FizzBuzz::convert).forEach(System.out::println);
         // Variante 2
-        IntStream numberRange = generateRange();
-        Stream<String> convertedData = numberRange.mapToObj(convert());
-        convertedData.forEach(printResult());
+        List<Integer> numbers = generateRange();
+        List<String> result = convert(numbers);
+        print(result);
     }
 
-    private static IntStream generateRange() {
-        return IntStream.range(1, 101);
+    private static List<Integer> generateRange() {
+        return IntStream.range(1, 101).boxed().collect(Collectors.toList());
     }
 
-    private static IntFunction<String> convert() {
-        return FizzBuzz::convert;
+    private static List<String> convert(List<Integer> numbers) {
+        return numbers.stream().map(FizzBuzz::convert).collect(Collectors.toList());
     }
 
     public static String convert(Integer i) {
@@ -36,7 +34,7 @@ public class FizzBuzz {
         };
     }
 
-    private static Consumer<String> printResult() {
-        return System.out::println;
+    private static void print(List<String> result) {
+        result.forEach(System.out::println);
     }
 }

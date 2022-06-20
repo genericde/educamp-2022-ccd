@@ -13,25 +13,25 @@ class FizzBuzzTest {
 
     @ParameterizedTest
     @ValueSource(ints = {3, 6, 9, 12, 18, 21})
-    public void testFizz(int value) {
+    public void convertShouldReturnFizz(int value) {
         assertEquals("Fizz", new FizzBuzz().convert(value));
     }
 
     @ParameterizedTest
     @ValueSource(ints = {5, 10, 20, 25, 35, 40})
-    public void testBuzz(int value) {
+    public void convertShouldReturnBuzz(int value) {
         assertEquals("Buzz", new FizzBuzz().convert(value));
     }
 
     @ParameterizedTest
     @ValueSource(ints = {15, 30, 45, 60, 75, 90})
-    public void testFizzBuzz(int value) {
+    public void convertShouldReturnFizzBuzz(int value) {
         assertEquals("FizzBuzz", new FizzBuzz().convert(value));
     }
 
     @ParameterizedTest
     @ValueSource(ints = {1, 2, 4, 7, 8, 11})
-    public void testNumber(int value) {
+    public void convertShouldReturnNumber(int value) {
         assertEquals(String.valueOf(value), new FizzBuzz().convert(value));
     }
 
