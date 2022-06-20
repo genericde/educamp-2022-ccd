@@ -3,6 +3,8 @@ package fizzbuzz;
 import java.util.ArrayList;
 import java.util.List;
 
+import static fizzbuzz.ConsolePrinter.printListToConsole;
+
 public class Runner {
 
     public void generateResultList(){
@@ -17,7 +19,4 @@ public class Runner {
         printListToConsole(resultList);
     }
 
-    private void printListToConsole(List<String> list){
-        list.forEach(item -> System.out.println(item));
-    }
 }

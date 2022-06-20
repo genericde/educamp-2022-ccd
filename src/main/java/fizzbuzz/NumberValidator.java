@@ -7,7 +7,7 @@ public class NumberValidator {
 
 
         if (number % 3 == 0){
-            stringBuilder.append("FIZZ");
+            stringBuilder.append("GINFIZZ");
         }
 
         if (number % 5 == 0){
