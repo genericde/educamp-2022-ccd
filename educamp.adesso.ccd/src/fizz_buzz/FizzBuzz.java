@@ -3,6 +3,7 @@ package fizz_buzz;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -21,19 +22,17 @@ public class FizzBuzz {
   }
 
   public void doFizzBuzz() {
-    this.iterateOverNumberRange();
+    this.iterateAndProcessNumberRange((Integer number) -> {
+      String substitute = substituteNumber(number);
+      displaySubstitute(substitute);
+    });
   }
 
-  private void iterateOverNumberRange() {
+  private void iterateAndProcessNumberRange(Consumer<Integer> process) {
     Iterator<Integer> i = this.numberRange.iterator();
     while(i.hasNext()) {
-      this.fizzBuzzProcess(i.next());
+      process.accept(i.next());
     }
-  }
-
-  private void fizzBuzzProcess(Integer number) {
-    String substitute = substituteNumber(number);
-    displaySubstitute(substitute);
   }
 
   private String substituteNumber(Integer number) {
