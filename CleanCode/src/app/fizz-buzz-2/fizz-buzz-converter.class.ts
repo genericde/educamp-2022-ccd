@@ -3,15 +3,15 @@ import { BUZZ, FIZZ, FIZZ_BUZZ } from './fizz-buzz.const';
 
 export class FizzBuzzConverter {
   static convertNumbersToFizzBuzz(numbers: number[]): FizzBuzzNumberUnion[] {
-    const convertedNumbers: FizzBuzzNumberUnion[] = [];
+    const result: FizzBuzzNumberUnion[] = [];
 
     for (let element of numbers) {
-      convertedNumbers.push(
+      result.push(
         this.getFizzBuzzValue(element)
       );
     }
 
-    return convertedNumbers;
+    return result;
   }
 
   static getFizzBuzzValue = (i: number): FizzBuzzNumberUnion => {

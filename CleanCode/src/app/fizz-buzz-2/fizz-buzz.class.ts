@@ -6,8 +6,8 @@ export class FizzBuzz {
 
   static doFizzBuzz(): void {
     const numbers = RangeCreator.createRange();
-    const convertedNumbers = FizzBuzzConverter.convertNumbersToFizzBuzz(numbers);
-    Printer.printList(convertedNumbers);
+    const result = FizzBuzzConverter.convertNumbersToFizzBuzz(numbers);
+    Printer.printList(result);
   }
 
 }
