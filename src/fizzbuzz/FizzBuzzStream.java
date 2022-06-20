@@ -8,6 +8,6 @@ public class FizzBuzzStream {
 	private final FizzBuzz wordBuilder = new FizzBuzz();
 	
 	public Stream<String> generate(int upperBound) {
-		return IntStream.rangeClosed(1, upperBound).mapToObj(wordBuilder::buildWord);
+		return IntStream.rangeClosed(1, upperBound).mapToObj(wordBuilder::convert);
 	}
 }

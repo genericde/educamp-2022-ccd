@@ -3,7 +3,7 @@ package fizzbuzz;
 public class FizzBuzz {
 	private final StringBuilder wordBuilder = new StringBuilder();
 	
-	public String buildWord(int number) {
+	public String convert(int number) {
 		if (number <= 0) {
 			throw new IllegalArgumentException("number must be strictly positive");
 		}

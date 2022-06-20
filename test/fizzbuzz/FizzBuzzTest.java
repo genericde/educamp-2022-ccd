@@ -11,20 +11,20 @@ class FizzBuzzTest {
 	
 	@Test
 	void fifteenIsFizzBuzz() {
-		var result = wordBuilder.buildWord(15);
+		var result = wordBuilder.convert(15);
 		
 		assertEquals("FIZZBUZZ", result);
 	}
 	
 	@Test
 	void twoIsPlainNumber() {
-		var result = wordBuilder.buildWord(2);
+		var result = wordBuilder.convert(2);
 		
 		assertEquals("2", result);
 	}
 	
 	@Test
 	void negativeValueIsNotAllowed() {
-		assertThrows(IllegalArgumentException.class, () -> wordBuilder.buildWord(-2));
+		assertThrows(IllegalArgumentException.class, () -> wordBuilder.convert(-2));
 	}
 }
