@@ -6,7 +6,9 @@ import java.util.stream.IntStream;
 
 public class RangeGenerator {
 
-    public static List<Integer> generateListFromRange(int start, int end){
+    public static List<Integer> generateListFromRange(){
+        int start = 1;
+        int end = 100;
         return IntStream.rangeClosed(start, end)
                 .boxed().collect(Collectors.toList());
     }
