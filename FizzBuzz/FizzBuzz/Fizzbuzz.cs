@@ -10,15 +10,13 @@ namespace FizzBuzz
     {
         public static void Start()
         {
-            List<int> range = new List<int>();
-            List<String> convertedNumbers = new List<String>();
 
             RangeCreator rangeCreator = new RangeCreator();
             FizzBuzzConverter converter = new FizzBuzzConverter();
             Printer printer = new Printer();
 
-            range = rangeCreator.GenerateRange();
-            convertedNumbers = converter.Convert(range);
+            var range = rangeCreator.GenerateRange();
+            var convertedNumbers = converter.Convert(range);
             printer.Print(convertedNumbers);
         }
     }
