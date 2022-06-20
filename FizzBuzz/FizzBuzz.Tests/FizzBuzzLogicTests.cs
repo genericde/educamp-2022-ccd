@@ -1,3 +1,4 @@
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace FizzBuzz.Tests;
@@ -12,6 +13,7 @@ public class FizzBuzzLogicTests
     public void ConvertToFizzBuzzTests(int input, string expected)
     {
         var actual = FizzBuzzConverter.Convert(input);
-        Assert.AreEqual(expected, actual);
+
+        actual.Should().Be(expected);
     }
 }
