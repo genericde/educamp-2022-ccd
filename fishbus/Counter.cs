@@ -13,9 +13,9 @@ public class Counter
     {
         for (var i = 1; i <= 100; i++)
         {
-            bool canConvert = FizzBuzz.TryConvertNumberToWord(i, out string outcome);
+            bool canConvertNumberToWord = FizzBuzz.TryConvertNumberToWord(i, out string outcome);
 
-            if (canConvert)
+            if (canConvertNumberToWord)
             {
                 _display.Print(outcome);
             }
