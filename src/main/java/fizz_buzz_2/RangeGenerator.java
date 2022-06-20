@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class RangeGenerator {
-    public static List<Integer> generate(int min, int max) {
-        return IntStream.range(min, max).boxed().collect(Collectors.toList());
+    public static List<Integer> generate() {
+        return IntStream.range(1,100).boxed().collect(Collectors.toList());
     }
 }
