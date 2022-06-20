@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.lang.reflect.Method;
 
 public class FizzBuzzTest {
     private static final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
@@ -34,15 +33,24 @@ public class FizzBuzzTest {
         Assertions.assertEquals(consoleContent, outContent.toString());
     }
 
-    private String invokeMethode(String methodName, Class<?> argClasses) {
-        Method method = null;
-        try {
-            method = FizzBuzz.class.getDeclaredMethod(methodName, argClasses);
-        } catch (NoSuchMethodException e) {
-            throw new RuntimeException("Methode: " + methodName + " does not exist, with arguments: " + argClasses.toString());
-        }
-        method.setAccessible(true);
-        return method.invoke(targetObject, argObjects);
+    @Test
+    void printFizzBuzz_ThrowsErrorWithRangeBelow2() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> FizzBuzz.printFizzBuzz(1));
+    }
+
+    @Test
+    void printFizzBuzz_ThrowsErrorWithNegativeRange() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> FizzBuzz.printFizzBuzz(-20));
+    }
+
+    @Test
+    void buildFizzBuzzLine() {
+        Assertions.assertEquals("FIZZ", FizzBuzz.buildFizzBuzzLine(3));
+        Assertions.assertEquals("FIZZ", FizzBuzz.buildFizzBuzzLine(9));
+        Assertions.assertEquals("BUZZ", FizzBuzz.buildFizzBuzzLine(5));
+        Assertions.assertEquals("BUZZ", FizzBuzz.buildFizzBuzzLine(10));
+        Assertions.assertEquals("FIZZBUZZ", FizzBuzz.buildFizzBuzzLine(15));
+        Assertions.assertEquals("7", FizzBuzz.buildFizzBuzzLine(7));
     }
 
     private String buildPrintLine(String text) {
