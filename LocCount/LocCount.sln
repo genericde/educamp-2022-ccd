@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocCount", "LocCount\LocCount.csproj", "{6B7FDCC5-590D-403B-A1C7-5B0797D5B0A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocCountTest", "LocCountTest\LocCountTest.csproj", "{26D7FF9C-84BF-413F-9512-A6F4C6CB3B4E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{6B7FDCC5-590D-403B-A1C7-5B0797D5B0A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B7FDCC5-590D-403B-A1C7-5B0797D5B0A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B7FDCC5-590D-403B-A1C7-5B0797D5B0A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26D7FF9C-84BF-413F-9512-A6F4C6CB3B4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26D7FF9C-84BF-413F-9512-A6F4C6CB3B4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26D7FF9C-84BF-413F-9512-A6F4C6CB3B4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26D7FF9C-84BF-413F-9512-A6F4C6CB3B4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
