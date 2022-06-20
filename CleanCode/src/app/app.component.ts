@@ -8,6 +8,6 @@ import { FizzBuzz } from './fizz-buzz-2/fizz-buzz.class';
 })
 export class AppComponent implements OnInit {
   ngOnInit(): void {
-    new FizzBuzz().doFizzBuzz();
+    FizzBuzz.doFizzBuzz();
   }
 }
