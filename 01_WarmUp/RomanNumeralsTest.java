@@ -1,7 +1,7 @@
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 /**
  * @author ugk (Sokuro Matsuda)
@@ -16,4 +16,5 @@ class RomanNumeralsTest {
         assertEquals(1, romanNumerals.convertRomanToInteger("I"));
         assertNotEquals(1, romanNumerals.convertRomanToInteger("II"));
     }
+
 }
