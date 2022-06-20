@@ -1,4 +1,5 @@
 import { FizzBuzzConverter } from '../fizz-buzz-2/fizz-buzz-converter.class';
+import { BUZZ, FIZZ, FIZZ_BUZZ } from '../fizz-buzz-2/fizz-buzz.const';
 import { FizzBuzzNumberUnion } from './fizz-buzz-numer-union.type';
 
 describe('isFizz', () => {
@@ -30,12 +31,12 @@ describe('isBuzz', () => {
 describe('getFizzBuzzValue', () => {
   const testCases: {i: number, expectedValue: FizzBuzzNumberUnion}[] = [
     {i: 1, expectedValue: 1},
-    {i: 3, expectedValue: 'Fizz'},
-    {i: 5, expectedValue: 'Buzz'},
-    {i: 15, expectedValue: 'FizzBuzz'},
-    {i: 45, expectedValue: 'FizzBuzz'},
-    {i: 99, expectedValue: 'Fizz'},
-    {i: 100, expectedValue: 'Buzz'},
+    {i: 3, expectedValue: FIZZ},
+    {i: 5, expectedValue: BUZZ},
+    {i: 15, expectedValue: FIZZ_BUZZ},
+    {i: 45, expectedValue: FIZZ_BUZZ},
+    {i: 99, expectedValue: FIZZ},
+    {i: 100, expectedValue: BUZZ},
     {i: 101, expectedValue: 101}
   ];
 

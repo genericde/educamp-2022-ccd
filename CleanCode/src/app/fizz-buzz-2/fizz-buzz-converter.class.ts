@@ -1,4 +1,5 @@
 import { FizzBuzzNumberUnion } from '../fizz-buzz/fizz-buzz-numer-union.type';
+import { BUZZ, FIZZ, FIZZ_BUZZ } from './fizz-buzz.const';
 
 export class FizzBuzzConverter {
   static convertArrayToFizzBuzz(array: number[]): FizzBuzzNumberUnion[] {
@@ -15,15 +16,15 @@ export class FizzBuzzConverter {
 
   static getFizzBuzzValue = (i: number): FizzBuzzNumberUnion => {
     if (this.isFizz(i) && this.isBuzz(i)) {
-      return 'FizzBuzz';
+      return FIZZ_BUZZ;
     }
 
     if (this.isFizz(i)) {
-      return 'Fizz';
+      return FIZZ;
     }
 
     if (this.isBuzz(i)) {
-      return 'Buzz';
+      return BUZZ;
     }
 
     return i;
