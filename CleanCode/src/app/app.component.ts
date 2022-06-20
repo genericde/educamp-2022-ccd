@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { createFizzBuzzArrayFrom1ToN } from './fizz-buzz/fizz-buzz.const';
+import { FizzBuzz } from './fizz-buzz-2/fizz-buzz.class';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +8,6 @@ import { createFizzBuzzArrayFrom1ToN } from './fizz-buzz/fizz-buzz.const';
 })
 export class AppComponent implements OnInit {
   ngOnInit(): void {
-    const array = createFizzBuzzArrayFrom1ToN(100);
+    new FizzBuzz().doFizzBuzz();
   }
 }
