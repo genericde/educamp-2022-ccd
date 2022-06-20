@@ -1,6 +1,7 @@
 package fizzbuzz
 
-import fizzbuzz.printer.Printer
+import printer.Printer
+
 
 class FizzBuzzIntegrator(
     private val rangeGenerator: RangeGenerator,

@@ -1,4 +1,4 @@
-package fizzbuzz.printer
+package printer
 
 class ConsolePrinter : Printer {
 
