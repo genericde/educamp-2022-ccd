@@ -11,8 +11,8 @@ namespace LocCount
         public static void Start(string filename)
         {
             var lines = FileReader.Read(filename);
-            var filteredLines = FilterLines.filterLines(lines);
-            var count = CountLines.countLines(filteredLines);
+            var filteredLines = FilterLines.FilterLines(lines);
+            var count = CountLines.CountLines(filteredLines);
             Display.Show(count);
         }
     }

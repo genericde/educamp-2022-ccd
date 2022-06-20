@@ -8,7 +8,7 @@ namespace LocCount
 {
     public static class FilterLines
     {
-        public static List<String> filterLines(List<String> inputLines)
+        public static List<String> FilterLines(List<String> inputLines)
         {
             Func<string, bool> filterEmptyLines = line => line.Length > 0;
             Func<string, bool> filterSingleCommentLines = line => !(line.TrimStart().StartsWith(@"//"));
