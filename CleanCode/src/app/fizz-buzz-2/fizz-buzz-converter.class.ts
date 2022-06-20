@@ -2,16 +2,16 @@ import { FizzBuzzNumberUnion } from '../fizz-buzz/fizz-buzz-numer-union.type';
 import { BUZZ, FIZZ, FIZZ_BUZZ } from './fizz-buzz.const';
 
 export class FizzBuzzConverter {
-  static convertArrayToFizzBuzz(array: number[]): FizzBuzzNumberUnion[] {
-    const convertedArray: FizzBuzzNumberUnion[] = [];
+  static convertNumbersToFizzBuzz(numbers: number[]): FizzBuzzNumberUnion[] {
+    const convertedNumbers: FizzBuzzNumberUnion[] = [];
 
-    for (let element of array) {
-      convertedArray.push(
+    for (let element of numbers) {
+      convertedNumbers.push(
         this.getFizzBuzzValue(element)
       );
     }
 
-    return convertedArray;
+    return convertedNumbers;
   }
 
   static getFizzBuzzValue = (i: number): FizzBuzzNumberUnion => {

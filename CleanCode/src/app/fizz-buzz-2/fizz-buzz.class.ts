@@ -5,9 +5,9 @@ import { RangeCreator } from './range-creator.class';
 export class FizzBuzz {
 
   static doFizzBuzz(): void {
-    const numberArray = RangeCreator.createRange();
-    const convertedArray = FizzBuzzConverter.convertArrayToFizzBuzz(numberArray);
-    Printer.printArray(convertedArray);
+    const numbers = RangeCreator.createRange();
+    const convertedNumbers = FizzBuzzConverter.convertNumbersToFizzBuzz(numbers);
+    Printer.printList(convertedNumbers);
   }
 
 }
