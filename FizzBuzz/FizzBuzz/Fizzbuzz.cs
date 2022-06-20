@@ -12,9 +12,9 @@ namespace FizzBuzz
         {
             try
             {
-                RangeCreator rangeCreator = new RangeCreator();
-                FizzBuzzConverter converter = new FizzBuzzConverter();
-                Printer printer = new Printer();
+                var rangeCreator = new RangeCreator();
+                var converter = new FizzBuzzConverter();
+                var printer = new Printer();
 
                 var range = rangeCreator.GenerateRange();
                 var convertedNumbers = converter.Convert(range);

@@ -13,11 +13,11 @@ namespace FizzBuzz
         {
             try
             {
-                List<String> result = new List<String>();
+                var result = new List<String>();
                 foreach (int i in input)
                 {
 
-                    string convertString = String.Empty;
+                    var convertString = String.Empty;
                     if (IsFizz(i))
                     {
                         convertString += "Fizz";

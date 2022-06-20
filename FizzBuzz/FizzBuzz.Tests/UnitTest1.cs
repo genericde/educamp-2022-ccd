@@ -10,46 +10,48 @@ namespace FizzBuzz.Tests
         [Fact]
         public void TestCreateRange()
         {
-            List<int> testList = new List<int>();
+            var expectedResults = new List<int>();
             for (int i = 1; i <= 100; i++)
             {
-                testList.Add(i); ;
+                expectedResults.Add(i); ;
             }
-            RangeCreator rangeCreator = new RangeCreator();
-            Assert.Equal(testList, rangeCreator.GenerateRange());
+            var rangeCreator = new RangeCreator();
+            var results = rangeCreator.GenerateRange();
+            Assert.Equal(expectedResults, results);
         }
 
         [Fact]        
         public void TestConverter()
         {
-            List<int> testList = new List<int>();
-            testList.Add(1);
-            testList.Add(2);
-            testList.Add(3);
-            testList.Add(4);
-            testList.Add(5);
-            testList.Add(6);
-            testList.Add(7);
-            testList.Add(8);
-            testList.Add(9);
-            testList.Add(10);
-            testList.Add(15);
-            testList.Add(45);
-            List<String> testList2 = new List<string>();
-            testList2.Add("1");
-            testList2.Add("2");
-            testList2.Add("Fizz");
-            testList2.Add("4");
-            testList2.Add("Buzz");
-            testList2.Add("Fizz");
-            testList2.Add("7");
-            testList2.Add("8");
-            testList2.Add("Fizz");
-            testList2.Add("Buzz");
-            testList2.Add("FizzBuzz");
-            testList2.Add("FizzBuzz");
-            FizzBuzzConverter converter = new FizzBuzzConverter();
-            Assert.Equal(testList2, converter.Convert(testList));
+            var numbers = new List<int>();
+            numbers.Add(1);
+            numbers.Add(2);
+            numbers.Add(3);
+            numbers.Add(4);
+            numbers.Add(5);
+            numbers.Add(6);
+            numbers.Add(7);
+            numbers.Add(8);
+            numbers.Add(9);
+            numbers.Add(10);
+            numbers.Add(15);
+            numbers.Add(45);
+            var expectedResults = new List<string>();
+            expectedResults.Add("1");
+            expectedResults.Add("2");
+            expectedResults.Add("Fizz");
+            expectedResults.Add("4");
+            expectedResults.Add("Buzz");
+            expectedResults.Add("Fizz");
+            expectedResults.Add("7");
+            expectedResults.Add("8");
+            expectedResults.Add("Fizz");
+            expectedResults.Add("Buzz");
+            expectedResults.Add("FizzBuzz");
+            expectedResults.Add("FizzBuzz");
+            var converter = new FizzBuzzConverter();
+            var results = converter.Convert(numbers);
+            Assert.Equal(expectedResults, results);
 
 
         }

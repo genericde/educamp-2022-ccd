@@ -11,7 +11,7 @@ namespace FizzBuzz
         public List<int> GenerateRange() {
             try
             {
-                List<int> result = new List<int>();
+                var result = new List<int>();
                 for (int i = 1; i <= 100; i++)
                 {
                     result.Add(i);
