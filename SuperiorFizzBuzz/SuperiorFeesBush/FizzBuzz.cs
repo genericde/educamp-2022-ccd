@@ -4,18 +4,22 @@ public static class FizzBuzz
     {
         IEnumerable<int> range = RangeCounter.GenerateRange();
 
+        List<object> results = new List<object>();
+
         foreach(int number in range)
         {
             string result = FizzBuzzConverter.Convert(number);
 
             if(result != null)
             {
-                Printer.Print(result);
+                results.Add(result);
             }
             else
             {
-                Printer.Print(number);
+                results.Add(number);
             }
         }
+
+        Printer.Print(results);
     }
 }

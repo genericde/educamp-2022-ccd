@@ -1,7 +1,10 @@
 public static class Printer
 {
-    public static void Print(object value)
+    public static void Print(List<object> values)
     {
-        Console.WriteLine(value);
+        foreach(object value in values)
+        {
+            Console.WriteLine(value);
+        }
     }
 }

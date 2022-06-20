@@ -2,6 +2,6 @@ public static class RangeCounter
 {
     public static IEnumerable<int> GenerateRange()
     {
-        return Enumerable.Range(1, 101);
+        return Enumerable.Range(1, 100);
     }
 }
