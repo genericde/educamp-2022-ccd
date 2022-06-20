@@ -9,6 +9,6 @@ public class App {
     }
 
     private static void printFizzBuzzNumber(int i) {
-        System.out.println(FizzBuzz.replaceIfFizzBuzzNumber(i));
+        System.out.println(FizzBuzz.convertFizzBuzzNumber(i));
     }
 }

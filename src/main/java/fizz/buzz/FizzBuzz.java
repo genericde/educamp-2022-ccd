@@ -5,7 +5,7 @@ public class FizzBuzz {
     public static final String BUZZ_VALUE = "Buzz";
     public static final String FIZZ_VALUE = "Fizz";
 
-    public static String replaceIfFizzBuzzNumber(int number) {
+    public static String convertFizzBuzzNumber(int number) {
         if (isFizzBuzzNumber(number)) {
             return FIZZ_VALUE + BUZZ_VALUE;
         } else if (isBuzzNumber(number)) {
