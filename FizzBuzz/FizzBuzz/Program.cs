@@ -49,17 +49,6 @@ namespace FizzBuzz
             try
             {
                 string result = concatResults(ReplaceDivisble(inputNumber, 3), ReplaceDivisble(inputNumber, 5));
-                return createResult(inputNumber, result);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-
-        public static string createResult(int inputNumber, string result)
-        {
-            try { 
                 return (result == String.Empty) ? inputNumber.ToString() : result;
             }
             catch (Exception ex)
