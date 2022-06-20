@@ -14,11 +14,12 @@ public class FizzBuzzConverter {
     }
 
     public static String convert(Integer number) {
+        if (isFizzBuzz(number)) return FIZZ_BUZZ_LABEL;
+
         if (isFizz(number)) return FIZZ_LABEL;
 
         if (isBuzz(number)) return BUZZ_LABEL;
 
-        if (isFizzBuzz(number)) return FIZZ_BUZZ_LABEL;
 
         return String.valueOf(number);
     }
