@@ -2,13 +2,15 @@ package fizzbuzz
 
 import fizzbuzz.printer.Printer
 
-class FizzBuzzPrinter(
+class FizzBuzzIntegrator(
+    private val rangeGenerator: RangeGenerator,
     private val fizzBuzzConverter: FizzBuzzConverter,
     private val printer: Printer
 ) {
 
-    fun print() {
-        for (i in 1..100) {
+    operator fun invoke() {
+        val (start, end) = rangeGenerator.generateRange()
+        for (i in start..end) {
             printer.print(fizzBuzzConverter.convertNumber(i))
         }
     }
