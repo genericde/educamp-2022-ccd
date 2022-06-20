@@ -4,8 +4,8 @@ import java.util.List;
 
 public class Printer {
 
-    static void printFizzBuzzNumber(List<String> results) {
-        for (String output : results){
+    static void printFizzBuzzOutput(List<String> outputs) {
+        for (String output : outputs){
             System.out.println(output);
         }
     }
