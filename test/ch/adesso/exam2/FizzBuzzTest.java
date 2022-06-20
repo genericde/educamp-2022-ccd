@@ -1,5 +1,6 @@
-package ch.adesso;
+package ch.adesso.exam2;
 
+import ch.adesso.exam2.FizzBuzz;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -27,6 +28,5 @@ public class FizzBuzzTest {
 
     @Test
     public void printFizzBuzzMessage(){
-
     }
 }

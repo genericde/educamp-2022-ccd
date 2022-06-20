@@ -1,4 +1,4 @@
-package ch.adesso;
+package ch.adesso.exam2;
 
 public class FizzBuzz {
 
