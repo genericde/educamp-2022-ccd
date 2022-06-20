@@ -4,9 +4,9 @@ export class FizzBuzzConverter {
   static convertArrayToFizzBuzz(array: number[]): FizzBuzzNumberUnion[] {
     const convertedArray: FizzBuzzNumberUnion[] = [];
 
-    for (let entry of array) {
+    for (let element of array) {
       convertedArray.push(
-        this.getFizzBuzzValue(entry)
+        this.getFizzBuzzValue(element)
       );
     }
 
