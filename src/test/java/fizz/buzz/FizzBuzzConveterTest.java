@@ -8,24 +8,25 @@ import static org.junit.Assert.assertEquals;
 public class FizzBuzzConveterTest {
     @Test
     public void testFizzBuzzWithDivideableBy5and3() {
-        assertEquals( "FizzBuzz", FizzBuzzConveter.convertFizzBuzzNumber(15));
-        assertEquals("FizzBuzz", FizzBuzzConveter.convertFizzBuzzNumber(450));
+        assertEquals( "FizzBuzz", FizzBuzzConveter.convertNumber(15));
+        assertEquals("FizzBuzz", FizzBuzzConveter.convertNumber(450));
     }
 
     @Test
     public void testFizzBuzzWithDivideableBy3() {
-        assertEquals( "Fizz", FizzBuzzConveter.convertFizzBuzzNumber(21));
-        assertEquals("Fizz", FizzBuzzConveter.convertFizzBuzzNumber(9));
+        assertEquals( "Fizz", FizzBuzzConveter.convertNumber(21));
+        assertEquals("Fizz", FizzBuzzConveter.convertNumber(9));
     }
 
     @Test
     public void testFizzBuzzWithDivideableBy5() {
-        assertEquals( "Buzz", FizzBuzzConveter.convertFizzBuzzNumber(20));
-        assertEquals( "Buzz", FizzBuzzConveter.convertFizzBuzzNumber(455));
+        assertEquals( "Buzz", FizzBuzzConveter.convertNumber(20));
+        assertEquals( "Buzz", FizzBuzzConveter.convertNumber(455));
     }
 
     @Test
     public void testFizzBuzzNormal() {
-        assertEquals(FizzBuzzConveter.convertFizzBuzzNumber(22), "22");
+        assertEquals(FizzBuzzConveter.convertNumber(22), "22");
+        assertEquals(FizzBuzzConveter.convertNumber(1111), "1111");
     }
 }
