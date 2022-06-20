@@ -1,5 +1,5 @@
+import { FizzBuzzConverter } from '../fizz-buzz-2/fizz-buzz-converter.class';
 import { FizzBuzzNumberUnion } from './fizz-buzz-numer-union.type';
-import { getFizzBuzzValue, isBuzz, isFizz } from './fizz-buzz.const';
 
 describe('isFizz', () => {
   const testCases = [
@@ -44,19 +44,19 @@ describe('getFizzBuzzValue', () => {
 
 function testIsFizz(i: number, expectedValue: boolean): void {
   it(`should map ${i} to ${expectedValue}`, () => {
-    expect(isFizz(i)).toBe(expectedValue);
+    expect(FizzBuzzConverter.isFizz(i)).toBe(expectedValue);
   });
 }
 
 function testIsBuzz(i: number, expectedValue: boolean): void {
   it(`should map ${i} to ${expectedValue}`, () => {
-    expect(isBuzz(i)).toBe(expectedValue);
+    expect(FizzBuzzConverter.isBuzz(i)).toBe(expectedValue);
   });
 }
 
 function testGetFizzBuzzValue(i: number, expectedValue: FizzBuzzNumberUnion): void {
   it(`should map ${i} to ${expectedValue}`, () => {
-    expect(getFizzBuzzValue(i)).toEqual(expectedValue);
+    expect(FizzBuzzConverter.getFizzBuzzValue(i)).toEqual(expectedValue);
   });
 }
 
