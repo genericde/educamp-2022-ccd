@@ -10,14 +10,21 @@ namespace FizzBuzz
     {
         public static void Start()
         {
+            try
+            {
+                RangeCreator rangeCreator = new RangeCreator();
+                FizzBuzzConverter converter = new FizzBuzzConverter();
+                Printer printer = new Printer();
 
-            RangeCreator rangeCreator = new RangeCreator();
-            FizzBuzzConverter converter = new FizzBuzzConverter();
-            Printer printer = new Printer();
-
-            var range = rangeCreator.GenerateRange();
-            var convertedNumbers = converter.Convert(range);
-            printer.Print(convertedNumbers);
+                var range = rangeCreator.GenerateRange();
+                var convertedNumbers = converter.Convert(range);
+                printer.Print(convertedNumbers);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+           
         }
     }
 }

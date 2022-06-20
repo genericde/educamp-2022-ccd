@@ -10,9 +10,16 @@ namespace FizzBuzz
     {
         public void Print (List<String> input)
         {
-            foreach (string item in input)
+            try
             {
-                Console.WriteLine(item);
+                foreach (string item in input)
+                {
+                    Console.WriteLine(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
         }
     }

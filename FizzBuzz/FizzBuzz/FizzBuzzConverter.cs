@@ -11,33 +11,43 @@ namespace FizzBuzz
 
         public List<String> Convert(List<int> input)
         {
-            List<String> result = new List<String>();
-
-            foreach (int i in input)
+            try
             {
-
-                string convertString = String.Empty;
-                if (IsFizz(i)) { 
-                    convertString += "Fizz"; 
-                }
-                if (IsBuzz(i)) {
-                    convertString += "Buzz";
-                }
-                if (convertString == String.Empty)
+                List<String> result = new List<String>();
+                foreach (int i in input)
                 {
-                    convertString = i.ToString();
+
+                    string convertString = String.Empty;
+                    if (IsFizz(i))
+                    {
+                        convertString += "Fizz";
+                    }
+                    if (IsBuzz(i))
+                    {
+                        convertString += "Buzz";
+                    }
+                    if (convertString == String.Empty)
+                    {
+                        convertString = i.ToString();
+                    }
+                    result.Add(convertString);
                 }
-                result.Add(convertString);
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
 
-            return result;
+          
         }
 
-        public bool IsFizz(int input)
+        private bool IsFizz(int input)
         {
             return (input % 3 == 0);
         }
-        public bool IsBuzz(int input)
+        private bool IsBuzz(int input)
         {
             return (input % 5 == 0);
         }
