@@ -1,20 +1,23 @@
 package fizzbuzz;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class NumberEcho {
+public class FizzBuzzConvertor {
 
-	public static String buildEcho(Integer number) {
+	public static String convert(Integer number) {
 		String echo = new String();
 		echo += fizzEcho(number);
 		echo += buzzEcho(number);
 		return echo.length() > 0 ? echo : number.toString();
 	}
 	
-	public static void doEcho(List<Integer> numbers) {
+	public static List<String> convert(List<Integer> numbers) {
+		ArrayList<String> lines = new ArrayList<>();
 		for (Integer n : numbers) {
-			System.out.println(buildEcho(n));
+			lines.add(convert(n));
 		}
+		return lines;
 	}
 	
 	private static String fizzEcho(int number) {

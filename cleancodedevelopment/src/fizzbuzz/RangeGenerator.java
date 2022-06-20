@@ -3,9 +3,11 @@ package fizzbuzz;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NumberSequenceGenerator {
+public class RangeGenerator {
 
-	public static List<Integer> generate(int start, int end) {
+	public static List<Integer> generate() {
+		int start = 1;
+		int end = 100;
 		ArrayList<Integer> seq = new ArrayList<>();
 		for(int i = start; i <= end; i++) {
 			seq.add(i);
