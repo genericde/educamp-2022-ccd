@@ -1,6 +1,6 @@
 package main.java.fizz.buzz;
 
-public class FizzBuzz {
+public class FizzBuzzConveter {
 
     public static final String BUZZ_VALUE = "Buzz";
     public static final String FIZZ_VALUE = "Fizz";
