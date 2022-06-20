@@ -1,10 +1,11 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using MondayCleanCodeCourse;
 
-using MondayCleanCodeKurse;
-
-Console.WriteLine("Hello, World!");
+Console.WriteLine("FizzBuzz List!");
 
 var creator = new FizzBuzzCreator();
 creator.FizzBuzzIntegration();
+
+
+Console.WriteLine();
 Console.WriteLine("Press any button...");
 Console.ReadKey();

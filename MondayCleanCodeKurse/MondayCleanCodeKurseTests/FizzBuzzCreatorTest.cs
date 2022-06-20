@@ -1,4 +1,4 @@
-﻿using MondayCleanCodeKurse;
+﻿using MondayCleanCodeCourse;
 using Xunit;
 
 namespace MondayCleanCodeKurseTests

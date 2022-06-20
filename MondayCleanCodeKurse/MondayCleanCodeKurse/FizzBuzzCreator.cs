@@ -1,4 +1,4 @@
-﻿namespace MondayCleanCodeKurse
+﻿namespace MondayCleanCodeCourse
 {
     public class FizzBuzzCreator
     {
@@ -12,7 +12,7 @@
 
         public IEnumerable<int> RangeCreator(int size)
         {
-            return Enumerable.Range(0,size);
+            return Enumerable.Range(1,size);
         }
 
         public string FizzBuzzConverter(int data)
