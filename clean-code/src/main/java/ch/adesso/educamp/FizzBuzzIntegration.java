@@ -3,9 +3,9 @@ package ch.adesso.educamp;
 public class FizzBuzzIntegration {
 
     static void runFizzBuzz() {
-        String[] range = RangeGenerator.generateRange();
-        String[] convertedNumbers = FizzBuzzConverter.convert(range);
-        Printer.print(convertedNumbers);
+        String[] numbersInRange = RangeGenerator.generateRange();
+        String[] fizzBuzzNumbers = FizzBuzzConverter.convert(numbersInRange);
+        Printer.print(fizzBuzzNumbers);
     }
 
 }

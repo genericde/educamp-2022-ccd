@@ -2,17 +2,17 @@ package ch.adesso.educamp;
 
 public class FizzBuzzConverter {
 
-    static String[] convert(String[] numbersWithReplacement) {
+    static String[] convert(String[] numbersInRange) {
         for (int i = 1; i <= 100; i++) {
             if (i % 3 == 0 && i % 5 == 0) {
-                numbersWithReplacement[i-1] = "FizzBuzz";
+                numbersInRange[i-1] = "FizzBuzz";
             } else if (i % 3 == 0) {
-                numbersWithReplacement[i-1] = "Fizz";
+                numbersInRange[i-1] = "Fizz";
             } else if (i % 5 == 0) {
-                numbersWithReplacement[i-1] = "Buzz";
+                numbersInRange[i-1] = "Buzz";
             }
         }
-        return numbersWithReplacement;
+        return numbersInRange;
     }
 
 }
