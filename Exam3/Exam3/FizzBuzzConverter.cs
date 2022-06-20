@@ -14,15 +14,15 @@ namespace Exam3
 
 			foreach (var number in numbers)
 			{
-				if (isFizz(number) && isBuzz(number))
+				if (IsFizz(number) && IsBuzz(number))
 				{
 					result.Add("FizzBuzz");
 				}
-				else if (isFizz(number))
+				else if (IsFizz(number))
 				{
 					result.Add("Fizz");
 				}
-				else if (isBuzz(number))
+				else if (IsBuzz(number))
 				{
 					result.Add("Buzz");
 				}
@@ -36,13 +36,13 @@ namespace Exam3
 
 		}
 
-		private static bool isFizz(int currentCount)
+		private static bool IsFizz(int currentCount)
 		{
 			return currentCount % 3 == 0;
 		}
 
 
-		private static bool isBuzz(int currentCount)
+		private static bool IsBuzz(int currentCount)
 		{
 			return currentCount % 5 == 0;
 		}

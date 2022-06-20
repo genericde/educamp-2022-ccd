@@ -12,7 +12,7 @@ namespace Exam3
 		{
 			try
 			{
-				Console.WriteLine("Your numbers: {0}", string.Join("", numbers));
+				Console.WriteLine("Your numbers: {0}", string.Join("\n", numbers));
 				return true;
 			}
 			catch (Exception ex)
