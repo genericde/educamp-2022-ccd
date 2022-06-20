@@ -17,10 +17,10 @@ namespace FizzBuzz
             {
 
                 string convertString = String.Empty;
-                if (isFizz(i)) { 
+                if (IsFizz(i)) { 
                     convertString += "Fizz"; 
                 }
-                if (isBuzz(i)) {
+                if (IsBuzz(i)) {
                     convertString += "Buzz";
                 }
                 if (convertString == String.Empty)
@@ -33,11 +33,11 @@ namespace FizzBuzz
             return result;
         }
 
-        public bool isFizz(int input)
+        public bool IsFizz(int input)
         {
             return (input % 3 == 0);
         }
-        public bool isBuzz(int input)
+        public bool IsBuzz(int input)
         {
             return (input % 5 == 0);
         }
