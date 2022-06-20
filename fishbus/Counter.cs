@@ -2,26 +2,26 @@ namespace Fishbus;
 
 public class Counter
 {
-    private readonly IFizzBuzz _fizzBuzz;
+    private readonly IDisplay _display;
 
-    public Counter(IFizzBuzz fizzBuzz)
+    public Counter(IDisplay display)
     {
-        this._fizzBuzz = fizzBuzz;
+        this._display = display;
     }
 
-    public void ListNumbers(int start, int end)
+    public void ListNumbersWithFizzBuzz()
     {
-        for (var i = start; i < end; i++)
+        for (var i = 1; i <= 100; i++)
         {
-            bool canConvert = _fizzBuzz.TryConvert(i, out string outcome);
+            bool canConvert = FizzBuzz.TryConvertNumberToWord(i, out string outcome);
 
             if (canConvert)
             {
-                Console.WriteLine(outcome);
+                _display.Print(outcome);
             }
             else
             {
-                Console.WriteLine(i);
+                _display.Print(i);
             }
         }
     }

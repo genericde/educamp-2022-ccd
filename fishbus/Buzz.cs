@@ -1,8 +1,8 @@
 namespace Fishbus;
 
-public class Buzz
+public static class Buzz
 {
-    public bool CanConvert(int number)
+    public static bool CanConvert(int number)
     {
         return number % 5 == 0;
     }

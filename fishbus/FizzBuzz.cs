@@ -1,20 +1,11 @@
 namespace Fishbus;
 
-public class FizzBuzz : IFizzBuzz
+public static class FizzBuzz
 {
-    private readonly Fizz _fizz;
-    private readonly Buzz _buzz;
-
-    public FizzBuzz(Fizz fizz, Buzz buzz)
+    public static bool TryConvertNumberToWord(int number, out string outcome)
     {
-        _fizz = fizz;
-        _buzz = buzz;
-    }
-
-    public bool TryConvert(int number, out string outcome)
-    {
-        bool canConvertToFizz = _fizz.CanConvert(number);
-        bool canConvertToBuzz = _buzz.CanConvert(number);
+        bool canConvertToFizz = Fizz.CanConvert(number);
+        bool canConvertToBuzz = Buzz.CanConvert(number);
 
         if (canConvertToBuzz && canConvertToFizz)
         {
@@ -23,12 +14,12 @@ public class FizzBuzz : IFizzBuzz
         }
         else if (canConvertToFizz)
         {
-            outcome = Buzz.Value;
+            outcome = Fizz.Value;
             return true;
         }
         else if (canConvertToBuzz)
         {
-            outcome = Fizz.Value;
+            outcome = Buzz.Value;
             return true;
         }
 
