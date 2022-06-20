@@ -13,5 +13,7 @@ public class App {
 
         // Their FizzBuzz
         fizz_buzz.their_fizz_buzz.FizzBuzz.doFizzBuzz();
+        fizz_buzz.their_fizz_buzz.FizzBuzzTest fBTest = new fizz_buzz.their_fizz_buzz.FizzBuzzTest();
+        fBTest.test();
     }
 }
