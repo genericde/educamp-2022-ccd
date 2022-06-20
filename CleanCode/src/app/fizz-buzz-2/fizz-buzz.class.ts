@@ -4,10 +4,10 @@ import { RangeCreator } from './range-creator.class';
 
 export class FizzBuzz {
 
-  doFizzBuzz(): void {
-    const numberArray = new RangeCreator().createRange();
-    const convertedArray = new FizzBuzzConverter().convertArrayToFizzBuzz(numberArray);
-    new Printer().printArray(convertedArray);
+  static doFizzBuzz(): void {
+    const numberArray = RangeCreator.createRange();
+    const convertedArray = FizzBuzzConverter.convertArrayToFizzBuzz(numberArray);
+    Printer.printArray(convertedArray);
   }
 
 }

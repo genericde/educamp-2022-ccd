@@ -1,6 +1,6 @@
 export class RangeCreator {
 
-  public createRange(): number[] {
+  static createRange(): number[] {
     const array: number[] = [];
 
     for (let i = 1; i <= 100; i++) {

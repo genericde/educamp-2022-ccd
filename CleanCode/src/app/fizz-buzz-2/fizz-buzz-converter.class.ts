@@ -1,7 +1,7 @@
 import { FizzBuzzNumberUnion } from '../fizz-buzz/fizz-buzz-numer-union.type';
 
 export class FizzBuzzConverter {
-  public convertArrayToFizzBuzz(array: number[]): FizzBuzzNumberUnion[] {
+  static convertArrayToFizzBuzz(array: number[]): FizzBuzzNumberUnion[] {
     const convertedArray: FizzBuzzNumberUnion[] = [];
 
     for (let entry of array) {
@@ -13,7 +13,7 @@ export class FizzBuzzConverter {
     return convertedArray;
   }
 
-  private getFizzBuzzValue = (i: number): FizzBuzzNumberUnion => {
+  static getFizzBuzzValue = (i: number): FizzBuzzNumberUnion => {
     if (this.isFizz(i) && this.isBuzz(i)) {
       return 'FizzBuzz';
     }
@@ -29,11 +29,11 @@ export class FizzBuzzConverter {
     return i;
   }
 
-  private isFizz = (i: number): boolean => {
+  static isFizz = (i: number): boolean => {
     return i % 3 === 0;
   }
 
-  private isBuzz = (i: number): boolean => {
+  static isBuzz = (i: number): boolean => {
     return i % 5 === 0;
   }
 }
