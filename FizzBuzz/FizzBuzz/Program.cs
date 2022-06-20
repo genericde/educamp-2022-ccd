@@ -9,7 +9,7 @@ namespace FizzBuzz
         {
             try
             {
-                Fizzbuzz.Start();
+                FizzBuzz.Start();
                 Console.ReadKey();
             }
             catch (Exception ex)
