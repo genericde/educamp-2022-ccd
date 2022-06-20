@@ -8,7 +8,7 @@ namespace LocCount
 {
     public static class CountLines
     {
-        public static int CountLines(List<String> inputLines)
+        public static int Count(List<String> inputLines)
         {
             return inputLines.Count();
         }

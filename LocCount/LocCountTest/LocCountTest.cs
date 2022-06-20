@@ -32,7 +32,7 @@ namespace LocCountTest
         private void TestFilter(string input, int expectedCount)
         {
             var testList = new List<string>() { input };
-            var result = FilterLines.FilterLines(testList);
+            var result = FilterLines.Filter(testList);
             Assert.Equal(expectedCount, result.Count);
         }
     }
