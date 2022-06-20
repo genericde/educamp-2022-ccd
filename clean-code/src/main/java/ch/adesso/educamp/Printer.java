@@ -5,9 +5,7 @@ import java.util.Arrays;
 public class Printer {
 
     static void print(String[] fizzBuzzNumbers) {
-        Arrays.asList(fizzBuzzNumbers).forEach(n -> {
-            System.out.print(n + " ");
-        });
+        Arrays.asList(fizzBuzzNumbers).forEach(System.out::println);
     }
 
 }
