@@ -9,17 +9,7 @@ namespace FizzBuzz
         {
             try
             {
-                RangeCreator rangeCreator = new RangeCreator();  
-                List<int> range = new List<int>();
-                List<String> convertedNumbers = new List<String>();
-
-                range = rangeCreator.GenerateRange();
-                FizzBuzzConverter converter = new FizzBuzzConverter();
-                convertedNumbers = converter.Convert(range);   
-
-                Printer printer = new Printer();
-                printer.Print(convertedNumbers);   
-                
+                Fizzbuzz.Start();
                 Console.ReadKey();
             }
             catch (Exception ex)
