@@ -3,7 +3,7 @@ package fizz_buzz_2;
 public class FizzBuzz {
     public void run() {
         var numbers = RangeGenerator.generate();
-        var fizzBuzzList = FizzBuzzConverter.convert(numbers);
-        Printer.printList(fizzBuzzList);
+        var resultList = FizzBuzzConverter.convert(numbers);
+        Printer.printList(resultList);
     }
 }
