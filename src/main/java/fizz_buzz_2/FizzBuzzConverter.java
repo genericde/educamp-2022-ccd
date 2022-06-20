@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class FizzBuzzConverter {
+    public static final String FIZZ_LABEL = "Fizz";
+    public static final String BUZZ_LABEL = "Buzz";
+    public static final String FIZZ_BUZZ_LABEL = FIZZ_LABEL + BUZZ_LABEL;
     public static List<String> convertFizzBuzz(List<Integer> numbers) {
         return numbers.stream()
                       .map(FizzBuzzConverter::convertFizzBuzz)
@@ -11,25 +14,13 @@ public class FizzBuzzConverter {
     }
 
     public static String convertFizzBuzz(Integer number) {
-        var printString = "";
+        if (isFizz(number)) return FIZZ_LABEL;
 
-        if (isFizz(number)) {
-            printString += "FIZZ";
-        }
+        if (isBuzz(number)) return BUZZ_LABEL;
 
-        if (isBuzz(number)) {
-            printString += "BUZZ";
-        }
+        if (isFizzBuzz(number)) return FIZZ_BUZZ_LABEL;
 
-        if (isStringEmpty(printString)) {
-            printString += number;
-        }
-
-        return printString;
-    }
-
-    private static boolean isStringEmpty(String lineToPrint) {
-        return lineToPrint.length() == 0;
+        return String.valueOf(number);
     }
 
     private static boolean isFizz(int number) {
@@ -38,5 +29,9 @@ public class FizzBuzzConverter {
 
     private static boolean isBuzz(int number) {
         return number % 5 == 0;
+    }
+
+    private static boolean isFizzBuzz(int number) {
+        return isFizz(number) && isBuzz(number);
     }
 }
