@@ -11,9 +11,9 @@ namespace LocCount
         public static List<String> filterLines(List<String> inputLines)
         {
             Func<string, bool> filterEmptyLines = line => line.Length > 0;
-            Func<string, bool> filterSingleCommentLine = line => !(line.TrimStart().StartsWith(@"//"));
+            Func<string, bool> filterSingleCommentLines = line => !(line.TrimStart().StartsWith(@"//"));
 
-            var filteredLines = inputLines.Where(filterEmptyLines).Where(filterSingleCommentLine);
+            var filteredLines = inputLines.Where(filterEmptyLines).Where(filterSingleCommentLines);
             return filteredLines.ToList<String>();
         }
     }
