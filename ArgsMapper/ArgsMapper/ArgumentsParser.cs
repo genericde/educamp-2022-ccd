@@ -14,9 +14,11 @@ namespace ArgsParser
             var argumentArray = arguments.Split('-', StringSplitOptions.RemoveEmptyEntries);
             foreach (var argument in argumentArray)
             {
-                if (schema.ContainsKey(argument[0]))
+                var argumentName = argument[0];
+                var argumentValue = argument.Substring(1);
+                if (schema.ContainsKey(argumentName))
                 {
-                    result.Add(argument[0], parseSingleArgument(schema[argument[0]], argument));
+                    result.Add(argumentName, parseSingleArgument(schema[argumentName], argumentValue));
                 }
             }
             return result;
@@ -29,11 +31,11 @@ namespace ArgsParser
             }
             else if (type == typeof(Int32))
             {
-                return Convert.ToInt32(value.Substring(1));
+                return Convert.ToInt32(value);
             }
             else if (type == typeof(String))
             {
-                return value.Substring(1);
+                return value;
             }
             return false;
         }
