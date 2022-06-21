@@ -1,5 +1,6 @@
 package argsparser;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
@@ -9,19 +10,32 @@ public class ArgsParser {
 
 	public static Object parse(String schemaSpec, String args, Character selectedArg) {
 		var parsedSchema = SchemaParser.parseSchemaSpec(schemaSpec);
+		var parsedArgs = parseArgs(args, parsedSchema);
+		return getValue(selectedArg, parsedSchema, parsedArgs);
+	}
+
+	private static Object getValue(Character selectedArg, Map<Character, Class<?>> parsedSchema,
+			Map<Character, Argument> parsedArgs) {
 		validateArgLetter(selectedArg, parsedSchema);
+		var arg = parsedArgs.get(selectedArg);
+		if (arg == null) {
+			if (isMissingFlag(selectedArg, parsedSchema)) {
+				return false;
+			}
+			throw new IllegalArgumentException("Illegal argument");
+		}
+		return arg.asTypedValue(parsedSchema.get(arg.letter()));
+	}
+
+	private static Map<Character, Argument> parseArgs(String args, Map<Character, Class<?>> parsedSchema) {
+		var result = new HashMap<Character, Argument>();
 		var tokens = args.split(" ");
 		for (var token : tokens) {
 			var arg = parseToken(token);
 			validateArgLetter(arg.letter(), parsedSchema);
-			if (arg.letter() == selectedArg.charValue()) {
-				return arg.asTypedValue(parsedSchema.get(arg.letter()));
-			}
+			result.put(arg.letter(), arg);
 		}
-		if (isMissingFlag(selectedArg, parsedSchema)) {
-			return false;
-		}
-		return null;
+		return result;
 	}
 
 	private static boolean isMissingFlag(Character selectedArg, Map<Character, Class<?>> parsedSchema) {
