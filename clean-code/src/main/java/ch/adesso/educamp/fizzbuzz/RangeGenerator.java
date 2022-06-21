@@ -1,4 +1,4 @@
-package ch.adesso.educamp;
+package ch.adesso.educamp.fizzbuzz;
 
 import java.util.ArrayList;
 import java.util.List;

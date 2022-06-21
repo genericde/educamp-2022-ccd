@@ -1,4 +1,4 @@
-package ch.adesso.educamp;
+package ch.adesso.educamp.fizzbuzz;
 
 public class FizzBuzzIntegration {
 
