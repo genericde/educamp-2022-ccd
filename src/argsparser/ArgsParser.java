@@ -18,7 +18,14 @@ public class ArgsParser {
 				return arg.asTypedValue(parsedSchema.get(arg.letter()));
 			}
 		}
+		if (isMissingFlag(selectedArg, parsedSchema)) {
+			return false;
+		}
 		return null;
+	}
+
+	private static boolean isMissingFlag(Character selectedArg, Map<Character, Class<?>> parsedSchema) {
+		return parsedSchema.get(selectedArg) == Boolean.class;
 	}
 
 	private static void validateArgLetter(Character argLetter, Map<Character, Class<?>> parsedSchema) {
@@ -34,6 +41,4 @@ public class ArgsParser {
 		}
 		return new Argument(matcher.group(1).charAt(0), matcher.group(2));
 	}
-	
-	
 }

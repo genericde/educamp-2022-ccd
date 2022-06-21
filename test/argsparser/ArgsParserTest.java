@@ -1,8 +1,6 @@
 package argsparser;
 
-import static org.junit.Assert.assertNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +10,6 @@ class ArgsParserTest {
 	void parseValidArgumentShouldReturnBoolean() {
 		var result = ArgsParser.parse("f?,j#,w*", "-f -j123 -wSomeText", 'f');
 		
-		assertTrue(result instanceof Boolean);
 		assertEquals(Boolean.TRUE, result);
 	}
 	
@@ -20,7 +17,6 @@ class ArgsParserTest {
 	void parseValidArgumentShouldReturnInteger() {
 		var result = ArgsParser.parse("f?,j#,w*", "-f -j123 -wSomeText", 'j');
 		
-		assertTrue(result instanceof Integer);
 		assertEquals(123, result);
 	}
 	
@@ -28,14 +24,13 @@ class ArgsParserTest {
 	void parseValidArgumentShouldReturnString() {
 		var result = ArgsParser.parse("f?,j#,w*", "-f -j123 -wSomeText", 'w');
 		
-		assertTrue(result instanceof String);
 		assertEquals("SomeText", result);
 	}
 	
 	@Test
-	void parseMissingArgumentShouldReturnNull() {
+	void parseMissingArgumentShouldReturnFalse() {
 		var result = ArgsParser.parse("f?,j#,w*", "-j123 -wSomeText", 'f');
 		
-		assertNull(result);
+		assertEquals(Boolean.FALSE, result);
 	}
 }
