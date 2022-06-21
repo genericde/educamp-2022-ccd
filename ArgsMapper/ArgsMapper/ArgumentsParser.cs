@@ -16,22 +16,27 @@ namespace ArgsParser
             {
                 if (schema.ContainsKey(argument[0]))
                 {
-                    if (schema[argument[0]] == typeof(Boolean)) {
-                        result.Add(argument[0], true);
-                    }
-                    else if (schema[argument[0]] == typeof(Int32))
-                    {
-                        result.Add(argument[0], Convert.ToInt32(argument.Substring(1)));
-
-                    }
-                    else if (schema[argument[0]] == typeof(String))
-                    {
-                        result.Add(argument[0], argument.Substring(1));
-
-                    }
+                    result.Add(argument[0], parseArgument(schema[argument[0]], argument));
                 }
             }
             return result;
         }
+        public static dynamic parseArgument(Type type, string value)
+        {
+            if (type == typeof(Boolean))
+            {
+                return true;
+            }
+            else if (type == typeof(Int32))
+            {
+                return Convert.ToInt32(value.Substring(1));
+            }
+            else if (type == typeof(String))
+            {
+                return value.Substring(1);
+            }
+            return false;
+        }
     }
 }
+

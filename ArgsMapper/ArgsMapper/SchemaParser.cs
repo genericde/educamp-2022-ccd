@@ -14,7 +14,7 @@ namespace ArgsParser
             var schemaArray = schema.Split(',');
             foreach (var item in schemaArray)
             {
-                result.Add(item[0], parseType(item[0]));
+                result.Add(item[0], parseType(item[1]));
             }
             return result;
         }
