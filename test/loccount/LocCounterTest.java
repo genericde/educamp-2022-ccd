@@ -13,4 +13,10 @@ class LocCounterTest {
 		Path filepath = Files.createTempFile("empty", ".txt");
 		LocCounter.printLoc(filepath.toString());
 	}
+	
+	@Test
+	void runLocCounterWithoutComment() {
+		String filename = "src/loccount/LocPrinter.java";
+		LocCounter.printLoc(filename);
+	}
 }
