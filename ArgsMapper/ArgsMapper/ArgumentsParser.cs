@@ -16,12 +16,12 @@ namespace ArgsParser
             {
                 if (schema.ContainsKey(argument[0]))
                 {
-                    result.Add(argument[0], parseArgument(schema[argument[0]], argument));
+                    result.Add(argument[0], parseSingleArgument(schema[argument[0]], argument));
                 }
             }
             return result;
         }
-        public static dynamic parseArgument(Type type, string value)
+        public static dynamic parseSingleArgument(Type type, string value)
         {
             if (type == typeof(Boolean))
             {

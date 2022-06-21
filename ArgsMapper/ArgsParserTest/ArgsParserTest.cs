@@ -32,9 +32,9 @@ namespace ArgsParserTest
         [Fact]
         public void TestParseArgument()
         {
-            Assert.Equal("SomeCoolText", ArgumentsParser.parseArgument(typeof(String), "wSomeCoolText"));
-            Assert.Equal(213213213, ArgumentsParser.parseArgument(typeof(Int32), "j213213213"));
-            Assert.Equal(true, ArgumentsParser.parseArgument(typeof(Boolean), "abc"));
+            Assert.Equal("SomeCoolText", ArgumentsParser.parseSingleArgument(typeof(String), "wSomeCoolText"));
+            Assert.Equal(213213213, ArgumentsParser.parseSingleArgument(typeof(Int32), "j213213213"));
+            Assert.Equal(true, ArgumentsParser.parseSingleArgument(typeof(Boolean), "abc"));
         }
     }
 }
