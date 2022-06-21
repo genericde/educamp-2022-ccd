@@ -10,6 +10,6 @@ public class ValueExtractor {
         } else if (parsedSchema.schemaLetterForString.equals(selectedArg)) {
           return (T) parsedArguments.getStringParsed();
         }
-        throw new RuntimeException("Could not Extract Value");
+        throw new IllegalArgumentException("Could not Extract Value with wrong Arguments");
     }
 }
