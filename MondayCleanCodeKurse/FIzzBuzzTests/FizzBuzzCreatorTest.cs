@@ -1,7 +1,7 @@
-﻿using MondayCleanCodeCourse;
+﻿using FizzBuzz;
 using Xunit;
 
-namespace MondayCleanCodeKurseTests
+namespace FIzzBuzzTests
 {
     public class FizzBuzzCreatorTest
     {

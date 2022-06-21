@@ -1,8 +1,8 @@
-﻿namespace MondayCleanCodeCourse
+﻿namespace FizzBuzz
 {
     public class FizzBuzzCreator
     {
-        public void FizzBuzzIntegration()
+        public void FizzBuzzListCreation()
         {
             var list = RangeCreator(100);
 

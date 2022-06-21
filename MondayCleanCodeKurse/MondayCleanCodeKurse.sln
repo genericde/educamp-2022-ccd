@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32505.173
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MondayCleanCodeKurse", "MondayCleanCodeKurse\MondayCleanCodeKurse.csproj", "{6A409927-51EB-48A6-8E46-9B6347BBAC80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MondayCleanCodeKurse", "MondayCleanCodeKurse\MondayCleanCodeKurse.csproj", "{6A409927-51EB-48A6-8E46-9B6347BBAC80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MondayCleanCodeKurseTests", "MondayCleanCodeKurseTests\MondayCleanCodeKurseTests.csproj", "{E1E16817-9BEE-47B5-9E85-FA09190A51D7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocCounter", "LocCounter\LocCounter.csproj", "{24224DF4-EB26-496E-9FD4-A106F5A1E08C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzz", "FizzBuzz\FizzBuzz.csproj", "{4AD52504-4027-46AC-9CE9-1F58C89757B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FIzzBuzzTests", "FIzzBuzzTests\FIzzBuzzTests.csproj", "{F06D7787-0816-43AE-BFBD-739F4C5B81B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +21,18 @@ Global
 		{6A409927-51EB-48A6-8E46-9B6347BBAC80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A409927-51EB-48A6-8E46-9B6347BBAC80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A409927-51EB-48A6-8E46-9B6347BBAC80}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E1E16817-9BEE-47B5-9E85-FA09190A51D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E1E16817-9BEE-47B5-9E85-FA09190A51D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E1E16817-9BEE-47B5-9E85-FA09190A51D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E1E16817-9BEE-47B5-9E85-FA09190A51D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24224DF4-EB26-496E-9FD4-A106F5A1E08C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24224DF4-EB26-496E-9FD4-A106F5A1E08C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24224DF4-EB26-496E-9FD4-A106F5A1E08C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24224DF4-EB26-496E-9FD4-A106F5A1E08C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AD52504-4027-46AC-9CE9-1F58C89757B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AD52504-4027-46AC-9CE9-1F58C89757B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AD52504-4027-46AC-9CE9-1F58C89757B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AD52504-4027-46AC-9CE9-1F58C89757B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F06D7787-0816-43AE-BFBD-739F4C5B81B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F06D7787-0816-43AE-BFBD-739F4C5B81B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F06D7787-0816-43AE-BFBD-739F4C5B81B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F06D7787-0816-43AE-BFBD-739F4C5B81B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

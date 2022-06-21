@@ -1,10 +1,9 @@
-﻿using MondayCleanCodeCourse;
+﻿using LocCounter;
 
-Console.WriteLine("FizzBuzz List!");
+Console.WriteLine("CodeLineCounter List!");
 
-var creator = new FizzBuzzCreator();
-creator.FizzBuzzIntegration();
-
+var locCounter = new CodeLineCounter();
+Console.WriteLine(locCounter.NumberOfCodeLines(Directory.GetCurrentDirectory() + "/code.txt"));
 
 Console.WriteLine();
 Console.WriteLine("Press any button...");
